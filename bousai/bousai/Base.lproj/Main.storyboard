@@ -42,6 +42,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vvb-1C-0Q1"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwg-k5-Jua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,6 +70,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fsT-9t-gjN"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="SVZ-Ud-fwp" kind="push" identifier="ToSetHome" id="Tdc-z6-OyP"/>
                     </connections>
@@ -218,6 +220,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wuq-5w-6kV"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="S2A-gg-drD" kind="push" identifier="ToMain" id="rKv-fa-mu6"/>
                     </connections>
