@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83822571B815A0B0005E135 /* SetHomeViewController.swift */; };
 		C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DC1B7C3A5800719166 /* AppDelegate.swift */; };
 		C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DE1B7C3A5800719166 /* ViewController.swift */; };
 		C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E01B7C3A5800719166 /* Main.storyboard */; };
 		C8C109E41B7C3A5800719166 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E31B7C3A5800719166 /* Images.xcassets */; };
 		C8C109E71B7C3A5800719166 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E51B7C3A5800719166 /* LaunchScreen.xib */; };
 		C8C109F31B7C3A5900719166 /* bousaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109F21B7C3A5900719166 /* bousaiTests.swift */; };
+		C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8B1B8088B70010B749 /* TopViewController.swift */; };
+		C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8D1B8089580010B749 /* MainViewController.swift */; };
+		C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F4EB911B808B0B0010B749 /* CoreLocation.framework */; };
+		C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB931B8093270010B749 /* LocationManagerObject.swift */; };
+		C8F4EB9C1B80A9A10010B749 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB9B1B80A9A10010B749 /* ContentViewController.swift */; };
+		C8F4EBA01B80B69E0010B749 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */; };
 		C9C4FEDE05A4E65EC31584D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E96C626548B56C3EFE6D217 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +37,7 @@
 		5781C51923797BCEA723DA80 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9E96C626548B56C3EFE6D217 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6003662D79ACFE7D372C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C83822571B815A0B0005E135 /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
 		C8C109D71B7C3A5800719166 /* bousai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bousai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109DB1B7C3A5800719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109DC1B7C3A5800719166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +48,12 @@
 		C8C109EC1B7C3A5900719166 /* bousaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bousaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109F11B7C3A5900719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109F21B7C3A5900719166 /* bousaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bousaiTests.swift; sourceTree = "<group>"; };
+		C8F4EB8B1B8088B70010B749 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		C8F4EB8D1B8089580010B749 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C8F4EB911B808B0B0010B749 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C8F4EB931B8093270010B749 /* LocationManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerObject.swift; sourceTree = "<group>"; };
+		C8F4EB9B1B80A9A10010B749 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */,
 				C9C4FEDE05A4E65EC31584D0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +79,7 @@
 		1FB5A7E94E9788D406E92549 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8F4EB911B808B0B0010B749 /* CoreLocation.framework */,
 				9E96C626548B56C3EFE6D217 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -76,6 +92,15 @@
 				BAC6003662D79ACFE7D372C8 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C83822591B8160F60005E135 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				C8F4EB8B1B8088B70010B749 /* TopViewController.swift */,
+				C8F4EB8D1B8089580010B749 /* MainViewController.swift */,
+			);
+			name = MainView;
 			sourceTree = "<group>";
 		};
 		C8C109CE1B7C3A5800719166 = {
@@ -102,7 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				C8C109DC1B7C3A5800719166 /* AppDelegate.swift */,
-				C8C109DE1B7C3A5800719166 /* ViewController.swift */,
+				C8F4EB9D1B80B5A80010B749 /* PageViewController */,
+				C8F4EB9E1B80B5E40010B749 /* Walkthrough */,
+				C83822591B8160F60005E135 /* MainView */,
+				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
 				C8C109E01B7C3A5800719166 /* Main.storyboard */,
 				C8C109E31B7C3A5800719166 /* Images.xcassets */,
 				C8C109E51B7C3A5800719166 /* LaunchScreen.xib */,
@@ -134,6 +162,24 @@
 				C8C109F11B7C3A5900719166 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8F4EB9D1B80B5A80010B749 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C8C109DE1B7C3A5800719166 /* ViewController.swift */,
+				C8F4EB9B1B80A9A10010B749 /* ContentViewController.swift */,
+			);
+			name = PageViewController;
+			sourceTree = "<group>";
+		};
+		C8F4EB9E1B80B5E40010B749 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */,
+				C83822571B815A0B0005E135 /* SetHomeViewController.swift */,
+			);
+			name = Walkthrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +234,11 @@
 					C8C109D61B7C3A5800719166 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = T66965A94D;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					C8C109EB1B7C3A5900719166 = {
 						CreatedOnToolsVersion = 6.4;
@@ -272,8 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F4EBA01B80B69E0010B749 /* LocationViewController.swift in Sources */,
+				C8F4EB9C1B80A9A10010B749 /* ContentViewController.swift in Sources */,
+				C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */,
+				C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */,
 				C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */,
+				C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
+				C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

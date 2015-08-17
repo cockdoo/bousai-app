@@ -13,9 +13,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+//        var pageControl = UIPageControl.appearance()
+//        pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+//        pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
+//        pageControl.backgroundColor = UIColor.whiteColor()
+        
+        
+        //UserDefaultのデフォルト設定
+        let ud = NSUserDefaults.standardUserDefaults()
+        var dic = ["firstLaunch": true]
+        ud.registerDefaults(dic)
+        
+        var isFirstLaunch: Bool
+        
+        //初回起動かどうかの判定
+        if ud.boolForKey("firstLaunch") {
+            println("初回起動")
+            isFirstLaunch = true
+            ud.setBool(false, forKey: "firstLaunch")
+        }else {
+            isFirstLaunch = false
+        }
+        
+        var storyboard:UIStoryboard =  UIStoryboard(name: "Main",bundle:nil)
+        var viewController:UIViewController
+        
+        //表示するビューを指定
+        if isFirstLaunch {
+            viewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") as! UIViewController
+        } else {
+            viewController = storyboard.instantiateViewControllerWithIdentifier("TopView") as! UIViewController
+        }
+        
+        
+        window?.rootViewController = viewController
+        
         return true
     }
 
