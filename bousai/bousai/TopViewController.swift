@@ -17,8 +17,21 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         LM = LocationManagerObject()
         LM.settingLocationManager()
+        
+        setLocationButton()
+        
+        var mainButton = LocationButton()
+        self.view.addSubview(mainButton)
+    }
+    
+    func setLocationButton() {
+        
+        for var num:Float = 0; num < 10; num++ {
+
+        }
     }
     
     @IBAction func currentButtonTapped(sender: AnyObject) {

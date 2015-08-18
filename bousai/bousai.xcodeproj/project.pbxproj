@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83822571B815A0B0005E135 /* SetHomeViewController.swift */; };
+		C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C66101B824ECB0033F969 /* LocationButton.swift */; };
 		C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DC1B7C3A5800719166 /* AppDelegate.swift */; };
 		C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DE1B7C3A5800719166 /* ViewController.swift */; };
 		C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E01B7C3A5800719166 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		9E96C626548B56C3EFE6D217 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6003662D79ACFE7D372C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C83822571B815A0B0005E135 /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
+		C88C66101B824ECB0033F969 /* LocationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		C8C109D71B7C3A5800719166 /* bousai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bousai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109DB1B7C3A5800719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109DC1B7C3A5800719166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				C8F4EB9E1B80B5E40010B749 /* Walkthrough */,
 				C83822591B8160F60005E135 /* MainView */,
 				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
+				C88C66101B824ECB0033F969 /* LocationButton.swift */,
 				C8C109E01B7C3A5800719166 /* Main.storyboard */,
 				C8C109E31B7C3A5800719166 /* Images.xcassets */,
 				C8C109E51B7C3A5800719166 /* LaunchScreen.xib */,
@@ -329,6 +332,7 @@
 				C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */,
 				C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */,
 				C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */,
+				C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
 				C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */,
 			);
