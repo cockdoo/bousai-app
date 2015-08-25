@@ -15,6 +15,8 @@
 		C8C109E41B7C3A5800719166 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E31B7C3A5800719166 /* Images.xcassets */; };
 		C8C109E71B7C3A5800719166 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E51B7C3A5800719166 /* LaunchScreen.xib */; };
 		C8C109F31B7C3A5900719166 /* bousaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109F21B7C3A5900719166 /* bousaiTests.swift */; };
+		C8E2DC431B82CE99008F36AB /* RealmManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */; };
+		C8E2DC471B82D2FD008F36AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DC461B82D2FD008F36AB /* User.swift */; };
 		C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8B1B8088B70010B749 /* TopViewController.swift */; };
 		C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8D1B8089580010B749 /* MainViewController.swift */; };
 		C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F4EB911B808B0B0010B749 /* CoreLocation.framework */; };
@@ -50,6 +52,9 @@
 		C8C109EC1B7C3A5900719166 /* bousaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bousaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109F11B7C3A5900719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109F21B7C3A5900719166 /* bousaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bousaiTests.swift; sourceTree = "<group>"; };
+		C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManagerObject.swift; sourceTree = "<group>"; };
+		C8E2DC461B82D2FD008F36AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bousai-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8F4EB8B1B8088B70010B749 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		C8F4EB8D1B8089580010B749 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C8F4EB911B808B0B0010B749 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -133,6 +138,9 @@
 				C8F4EB9E1B80B5E40010B749 /* Walkthrough */,
 				C83822591B8160F60005E135 /* MainView */,
 				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
+				C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */,
+				C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */,
+				C8E2DC461B82D2FD008F36AB /* User.swift */,
 				C88C66101B824ECB0033F969 /* LocationButton.swift */,
 				C8C109E01B7C3A5800719166 /* Main.storyboard */,
 				C8C109E31B7C3A5800719166 /* Images.xcassets */,
@@ -332,9 +340,11 @@
 				C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */,
 				C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */,
 				C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */,
+				C8E2DC431B82CE99008F36AB /* RealmManagerObject.swift in Sources */,
 				C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
 				C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */,
+				C8E2DC471B82D2FD008F36AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "bousai/bousai-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -484,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "bousai/bousai-Bridging-Header.h";
 			};
 			name = Release;
 		};

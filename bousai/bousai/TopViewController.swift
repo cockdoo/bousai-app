@@ -8,23 +8,23 @@
 
 import UIKit
 
-
 class TopViewController: UIViewController {
     
-    var LM: LocationManagerObject!
+    var lManager: LocationManagerObject!
+    var rManager: RealmManagerObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        LM = LocationManagerObject()
-        LM.settingLocationManager()
+        lManager = LocationManagerObject()
+        lManager.settingLocationManager()
         
         setLocationButton()
         
-        var mainButton = LocationButton()
-        self.view.addSubview(mainButton)
+        rManager = RealmManagerObject()
+        rManager.test()
     }
     
     func setLocationButton() {
