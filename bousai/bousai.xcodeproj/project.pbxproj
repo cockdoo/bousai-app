@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83822571B815A0B0005E135 /* SetHomeViewController.swift */; };
+		C87F57671B8CBA83009D174F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */; };
+		C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */; };
 		C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C66101B824ECB0033F969 /* LocationButton.swift */; };
 		C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DC1B7C3A5800719166 /* AppDelegate.swift */; };
 		C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DE1B7C3A5800719166 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 		9E96C626548B56C3EFE6D217 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6003662D79ACFE7D372C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C83822571B815A0B0005E135 /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
+		C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerObject.swift; sourceTree = "<group>"; };
 		C88C66101B824ECB0033F969 /* LocationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		C8C109D71B7C3A5800719166 /* bousai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bousai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109DB1B7C3A5800719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87F57671B8CBA83009D174F /* libsqlite3.0.dylib in Frameworks */,
 				C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */,
 				C9C4FEDE05A4E65EC31584D0 /* libPods.a in Frameworks */,
 			);
@@ -86,6 +91,7 @@
 		1FB5A7E94E9788D406E92549 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */,
 				C8F4EB911B808B0B0010B749 /* CoreLocation.framework */,
 				9E96C626548B56C3EFE6D217 /* libPods.a */,
 			);
@@ -138,6 +144,7 @@
 				C8F4EB9E1B80B5E40010B749 /* Walkthrough */,
 				C83822591B8160F60005E135 /* MainView */,
 				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
+				C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */,
 				C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */,
 				C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */,
 				C8E2DC461B82D2FD008F36AB /* User.swift */,
@@ -343,6 +350,7 @@
 				C8E2DC431B82CE99008F36AB /* RealmManagerObject.swift in Sources */,
 				C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
+				C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */,
 				C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */,
 				C8E2DC471B82D2FD008F36AB /* User.swift in Sources */,
 			);

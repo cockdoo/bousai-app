@@ -10,5 +10,6 @@
 #define bousai_bousai_Bridging_Header_h
 
 #import <Realm/Realm.h>
+#import "FMDB.h"
 
 #endif

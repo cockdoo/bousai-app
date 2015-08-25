@@ -12,6 +12,7 @@ class TopViewController: UIViewController {
     
     var lManager: LocationManagerObject!
     var rManager: RealmManagerObject!
+    var dbManager: DatabaseManagerObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +20,14 @@ class TopViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         lManager = LocationManagerObject()
-        lManager.settingLocationManager()
+//        lManager.settingLocationManager()
+//        setLocationButton()
         
-        setLocationButton()
+//        rManager = RealmManagerObject()
+//        rManager.test()
         
-        rManager = RealmManagerObject()
-        rManager.test()
+        dbManager = DatabaseManagerObject()
+        dbManager.test()
     }
     
     func setLocationButton() {
