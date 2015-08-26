@@ -7,20 +7,30 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var mapView: MapViewObject!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        mapView.initializeSetting()
+        mapView.moveTo(-33.868, lon: 151.2086, zoom: 2)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnTouched(sender: AnyObject) {
+        backToTopView()
+    }
+    
+    func backToTopView() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation

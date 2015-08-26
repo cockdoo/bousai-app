@@ -9,7 +9,9 @@
 import UIKit
 
 class DatabaseManagerObject: NSObject {
-    func test() {
+    var db: FMDatabase!
+    
+    func makeInstanceOfFMDatabase() {
         // get path of /Documents
         let paths = NSSearchPathForDirectoriesInDomains( .DocumentDirectory, .UserDomainMask, true)
         
@@ -17,8 +19,47 @@ class DatabaseManagerObject: NSObject {
         let _path = paths[0].stringByAppendingPathComponent("swift2objectc.db")
         
         // make instance of FMDatabase
-        let db = FMDatabase(path: _path)
+        db = FMDatabase(path: _path)
+    }
+    
+    func createTable() {
+        db.open()
+        var sql = "CREATE TABLE IF NOT EXISTS test3 (id INTEGER PRIMARY KEY, lat INTEGER, lon INTEGER, date INTEGER);"
+        let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
+        db.close()
         
+        if ret {
+            println("テーブルの作成に成功")
+        }
+    }
+    
+    func insertLocationData() {
+        db.open()
+        var sql = "INSERT INTO test3 (lat, lon, date) VALUES (?, ?, ?);"
+        db.executeUpdate(sql, withArgumentsInArray: [36.342141, 132.875689, 4573])
+        db.close()
+    }
+    
+    func getLocationData() -> NSString{
+        db.open()
+        var sql = "SELECT id, lat, lon, date FROM test3 ORDER BY id;"
+        let results = db.executeQuery(sql, withArgumentsInArray: nil)
+        
+        while results.next() {
+            let id = results.intForColumn("id")
+            let lat = results.intForColumn("lat")
+            let lon = results.intForColumn("lon")
+            let date = results.intForColumn("date")
+            // print data
+            println("id:\(id) lat:\(lat)")
+        }
+        db.close()
+        
+        var string = "testttt"
+        return string
+    }
+    
+    func sample() {
         // database open and create database
         db.open()
         
@@ -27,8 +68,8 @@ class DatabaseManagerObject: NSObject {
         let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
         
         // insert data
-        sql = "INSERT INTO sample (user_id, user_name) VALUES (?, ?);"
-        db.executeUpdate(sql, withArgumentsInArray: [314, "ckdoo"])
+        sql = "INSERT INTO sample (user_name) VALUES (?);"
+        db.executeUpdate(sql, withArgumentsInArray: ["bb"])
         
         // read data
         sql = "SELECT user_id, user_name FROM sample ORDER BY user_id;"
@@ -45,7 +86,7 @@ class DatabaseManagerObject: NSObject {
         db.close()
     }
     
-    func test2() {
+    func sample2() {
         // /Documentsまでのパスを取得
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,

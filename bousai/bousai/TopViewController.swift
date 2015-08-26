@@ -11,30 +11,28 @@ import UIKit
 class TopViewController: UIViewController {
     
     var lManager: LocationManagerObject!
-    var rManager: RealmManagerObject!
-    var dbManager: DatabaseManagerObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        lManager = LocationManagerObject()
-//        lManager.settingLocationManager()
-//        setLocationButton()
-        
-//        rManager = RealmManagerObject()
-//        rManager.test()
-        
-        dbManager = DatabaseManagerObject()
-        dbManager.test()
+        initializeLocationManager()
+//        initializeDatabaseManager()
     }
     
-    func setLocationButton() {
-        
-        for var num:Float = 0; num < 10; num++ {
+    func initializeLocationManager() {
+        lManager = LocationManagerObject()
+        lManager.settingLocationManager()
+    }
+    
+    func initializeDatabaseManager() {
+        dbManager = DatabaseManagerObject()
+        dbManager.makeInstanceOfFMDatabase()
 
-        }
+        dbManager.createTable()
+        dbManager.insertLocationData()
+        var a = dbManager.getLocationData()
+        println(a)
     }
     
     @IBAction func currentButtonTapped(sender: AnyObject) {

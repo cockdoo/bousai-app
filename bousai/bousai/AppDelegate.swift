@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
 //        pageControl.backgroundColor = UIColor.whiteColor()
         
+        //GoogleMap
+        GMSServices.provideAPIKey("AIzaSyDBKpJtkMSGU8cNdKQUziXpOOg8wN5TXKI")
         
         //UserDefaultのデフォルト設定
         let ud = NSUserDefaults.standardUserDefaults()
@@ -47,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             viewController = storyboard.instantiateViewControllerWithIdentifier("TopView") as! UIViewController
         }
-        
         
         window?.rootViewController = viewController
         
