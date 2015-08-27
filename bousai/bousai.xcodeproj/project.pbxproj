@@ -11,16 +11,14 @@
 		C87F57671B8CBA83009D174F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */; };
 		C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */; };
 		C88B28871B8D43EB0080A869 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B28861B8D43EB0080A869 /* Global.swift */; };
-		C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C66101B824ECB0033F969 /* LocationButton.swift */; };
 		C89112D31B8E0AB30096A0F5 /* MapViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */; };
+		C89112D61B8E4C760096A0F5 /* newark_nj_1922.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */; };
 		C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DC1B7C3A5800719166 /* AppDelegate.swift */; };
 		C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DE1B7C3A5800719166 /* ViewController.swift */; };
 		C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E01B7C3A5800719166 /* Main.storyboard */; };
 		C8C109E41B7C3A5800719166 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E31B7C3A5800719166 /* Images.xcassets */; };
 		C8C109E71B7C3A5800719166 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E51B7C3A5800719166 /* LaunchScreen.xib */; };
 		C8C109F31B7C3A5900719166 /* bousaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109F21B7C3A5900719166 /* bousaiTests.swift */; };
-		C8E2DC431B82CE99008F36AB /* RealmManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */; };
-		C8E2DC471B82D2FD008F36AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DC461B82D2FD008F36AB /* User.swift */; };
 		C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8B1B8088B70010B749 /* TopViewController.swift */; };
 		C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8D1B8089580010B749 /* MainViewController.swift */; };
 		C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F4EB911B808B0B0010B749 /* CoreLocation.framework */; };
@@ -48,8 +46,8 @@
 		C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerObject.swift; sourceTree = "<group>"; };
 		C88B28861B8D43EB0080A869 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		C88C66101B824ECB0033F969 /* LocationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewObject.swift; sourceTree = "<group>"; };
+		C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newark_nj_1922.jpg; sourceTree = "<group>"; };
 		C8C109D71B7C3A5800719166 /* bousai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bousai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109DB1B7C3A5800719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109DC1B7C3A5800719166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +58,6 @@
 		C8C109EC1B7C3A5900719166 /* bousaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bousaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109F11B7C3A5900719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109F21B7C3A5900719166 /* bousaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bousaiTests.swift; sourceTree = "<group>"; };
-		C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManagerObject.swift; sourceTree = "<group>"; };
-		C8E2DC461B82D2FD008F36AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bousai-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8F4EB8B1B8088B70010B749 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		C8F4EB8D1B8089580010B749 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +116,16 @@
 			name = MainView;
 			sourceTree = "<group>";
 		};
+		C89112D41B8E13CF0096A0F5 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
+				C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */,
+				C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */,
+			);
+			name = NSObject;
+			sourceTree = "<group>";
+		};
 		C8C109CE1B7C3A5800719166 = {
 			isa = PBXGroup;
 			children = (
@@ -144,17 +150,12 @@
 			isa = PBXGroup;
 			children = (
 				C8C109DC1B7C3A5800719166 /* AppDelegate.swift */,
+				C88B28861B8D43EB0080A869 /* Global.swift */,
 				C8F4EB9D1B80B5A80010B749 /* PageViewController */,
 				C8F4EB9E1B80B5E40010B749 /* Walkthrough */,
 				C83822591B8160F60005E135 /* MainView */,
-				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
-				C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */,
-				C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */,
-				C88B28861B8D43EB0080A869 /* Global.swift */,
-				C8E2DC421B82CE99008F36AB /* RealmManagerObject.swift */,
+				C89112D41B8E13CF0096A0F5 /* NSObject */,
 				C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */,
-				C8E2DC461B82D2FD008F36AB /* User.swift */,
-				C88C66101B824ECB0033F969 /* LocationButton.swift */,
 				C8C109E01B7C3A5800719166 /* Main.storyboard */,
 				C8C109E31B7C3A5800719166 /* Images.xcassets */,
 				C8C109E51B7C3A5800719166 /* LaunchScreen.xib */,
@@ -166,6 +167,7 @@
 		C8C109DA1B7C3A5800719166 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */,
 				C8C109DB1B7C3A5800719166 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -260,7 +262,7 @@
 						DevelopmentTeam = T66965A94D;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -295,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */,
+				C89112D61B8E4C760096A0F5 /* newark_nj_1922.jpg in Resources */,
 				C8C109E71B7C3A5800719166 /* LaunchScreen.xib in Resources */,
 				C8C109E41B7C3A5800719166 /* Images.xcassets in Resources */,
 			);
@@ -355,12 +358,9 @@
 				C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */,
 				C88B28871B8D43EB0080A869 /* Global.swift in Sources */,
 				C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */,
-				C8E2DC431B82CE99008F36AB /* RealmManagerObject.swift in Sources */,
-				C88C66111B824ECB0033F969 /* LocationButton.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
 				C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */,
 				C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */,
-				C8E2DC471B82D2FD008F36AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -24,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //GoogleMap
         GMSServices.provideAPIKey("AIzaSyDBKpJtkMSGU8cNdKQUziXpOOg8wN5TXKI")
+        
+        //notification
+//        UIApplication.sharedApplication().cancelAllLocalNotifications();
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+        
+        //background fetchの登録
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
         //UserDefaultのデフォルト設定
         let ud = NSUserDefaults.standardUserDefaults()
@@ -55,7 +63,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        println("background fetch!")
+        lManager.settingLocationManager()
+        lManager.locationManager.startUpdatingLocation()
+        
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: false)
+    }
+    
+    func notification() {
+        var message = "緯度:\(lManager.lat) 経度\(lManager.lon)"
+        
+        var notification = UILocalNotification()
+        notification.fireDate = NSDate()	// すぐに通知したいので現在時刻を取得
+        notification.timeZone = NSTimeZone.defaultTimeZone()
+        notification.alertBody = message
+        notification.alertAction = "OK"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        
+//        lManager.locationManager.stopUpdatingLocation()
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

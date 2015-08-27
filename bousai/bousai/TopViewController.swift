@@ -10,8 +10,6 @@ import UIKit
 
 class TopViewController: UIViewController {
     
-    var lManager: LocationManagerObject!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -35,9 +33,18 @@ class TopViewController: UIViewController {
         println(a)
     }
     
-    @IBAction func currentButtonTapped(sender: AnyObject) {
-        toMainView()
+    @IBAction func currentLocationButtonTapped(sender: AnyObject) {
+        if (lManager.lat != nil && lManager.lon != nil) {
+            selecedLat = lManager.lat
+            selecedLon = lManager.lon
+            toMainView()
+        }
     }
+    
+    func test() {
+        
+    }
+    
     
     func toMainView() {
         performSegueWithIdentifier("ToMain", sender: nil)

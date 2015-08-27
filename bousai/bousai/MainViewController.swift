@@ -17,7 +17,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         mapView.initializeSetting()
-        mapView.moveTo(-33.868, lon: 151.2086, zoom: 2)
+        mapView.moveTo(selecedLat, lon: selecedLon, zoom: 16)
+//        mapView.overLay()
+//        mapView.test()
     }
 
     override func didReceiveMemoryWarning() {

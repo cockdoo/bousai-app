@@ -213,7 +213,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="currentButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GI5-EO-fBa"/>
+                                    <action selector="currentLocationButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9Sy-1M-aoi"/>
                                 </connections>
                             </button>
                         </subviews>

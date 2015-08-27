@@ -26,6 +26,11 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>位置情報を取得します</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

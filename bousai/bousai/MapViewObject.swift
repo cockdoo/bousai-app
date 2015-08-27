@@ -17,10 +17,33 @@ class MapViewObject: GMSMapView {
         self.settings.compassButton = true
     }
     
-    func moveTo(lat:CLLocationDegrees, lon:CLLocationDegrees, zoom:Float) {
+    func moveTo(lat: CLLocationDegrees, lon: CLLocationDegrees, zoom:Float) {
         var camera = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: zoom)
         self.camera = camera
     }
+    
+    func overLay() {
+        var urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
+            var url = "http://cyberjapandata.gsi.go.jp/xyz/std/\(zoom)/\(x)/\(y).png"
+            return NSURL(string: url)!
+        }
+        
+        var layer = GMSURLTileLayer(URLConstructor: urls)
+        
+        layer.zIndex = 100
+        layer.opacity = 0.5
+        layer.map = self
+    }
+    
+
+    func convertLatLonToTile(lat: CLLocationDegrees, lon: CLLocationDegrees, z: Double) {
+        var x:Int = Int((lon / 180 + 1) * pow(2, z) / 2)
+        var y:Int = Int(((-log(tan((45 + lat / 2) * M_PI / 180)) + M_PI) * pow(2, z) / (2 * M_PI)))
+        println("x:\(x) y\(y)")
+        
+        let xyArray = NSArray()
+    }
+
     
     /*
     // Only override drawRect: if you perform custom drawing.

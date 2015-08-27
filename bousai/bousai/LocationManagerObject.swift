@@ -9,10 +9,15 @@
 import UIKit
 import CoreLocation
 
+var selecedLat: CLLocationDegrees!
+var selecedLon: CLLocationDegrees!
+
 class LocationManagerObject: NSObject, CLLocationManagerDelegate {
    
     var currentLocation: CLLocation?
-    var locationManager:CLLocationManager!
+    var locationManager: CLLocationManager!
+    var lat: CLLocationDegrees!
+    var lon: CLLocationDegrees!
     
     func settingLocationManager() {
         locationManager = CLLocationManager()
@@ -45,9 +50,10 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
         case .AuthorizedAlways:
             statusStr = "AuthorizedAlways"
             locationManager.startUpdatingLocation()
+//            locationManager.startMonitoringSignificantLocationChanges()
         case .AuthorizedWhenInUse:
             statusStr = "AuthorizedWhenInUse"
-            locationManager.startUpdatingLocation()
+//            locationManager.startUpdatingLocation()
         }
         println(" CLAuthorizationStatus: \(statusStr)")
     }
@@ -56,14 +62,17 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if locations.count > 0{
             currentLocation = locations.last as? CLLocation
-            NSLog("緯度:\(currentLocation?.coordinate.latitude) 経度:\(currentLocation?.coordinate.longitude)")
+            println("緯度:\(currentLocation?.coordinate.latitude) 経度:\(currentLocation?.coordinate.longitude)")
+            
+            lat = currentLocation?.coordinate.latitude
+            lon = currentLocation?.coordinate.longitude
         }
         //        manager.location.coordinate.latitude
     }
     
     // 位置情報取得に失敗した時に呼び出されるデリゲート.
     func locationManager(manager: CLLocationManager!,didFailWithError error: NSError!){
-        print("error")
+        print("locationManager error")
     }
 }
 

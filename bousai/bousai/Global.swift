@@ -8,4 +8,6 @@
 
 import UIKit
 
+var lManager: LocationManagerObject!
 var dbManager: DatabaseManagerObject!
+
