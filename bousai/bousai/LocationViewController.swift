@@ -15,6 +15,8 @@ class LocationViewController: UIViewController,  CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         settingLocationManager()
     }
     
@@ -60,11 +62,11 @@ class LocationViewController: UIViewController,  CLLocationManagerDelegate {
     }
     
     func toSetHomeView(){
-        performSegueWithIdentifier("ToSetHome", sender: nil);
+        performSegueWithIdentifier("ToTopView", sender: nil);
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "ToSetHome") {
+        if (segue.identifier == "ToTopView") {
         }
     }
     

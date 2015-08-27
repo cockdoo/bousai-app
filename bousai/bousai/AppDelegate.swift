@@ -70,21 +70,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         lManager.settingLocationManager()
         lManager.locationManager.startUpdatingLocation()
         
-        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: false)
     }
     
     func notification() {
-        var message = "緯度:\(lManager.lat) 経度\(lManager.lon)"
+        if (lManager.lat != nil && lManager.lon != nil) {
+            var message = "緯度:\(lManager.lat) 経度\(lManager.lon)"
+            dbManager.insertLocationData(lManager.lat, lon: lManager.lon)
+            
+            var notification = UILocalNotification()
+            notification.fireDate = NSDate()
+            notification.timeZone = NSTimeZone.defaultTimeZone()
+            notification.alertBody = message
+            notification.alertAction = "OK"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }else {
+            var notification = UILocalNotification()
+            notification.fireDate = NSDate()
+            notification.timeZone = NSTimeZone.defaultTimeZone()
+            notification.alertBody = "取得できなかった"
+            notification.alertAction = "OK"
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
         
-        var notification = UILocalNotification()
-        notification.fireDate = NSDate()	// すぐに通知したいので現在時刻を取得
-        notification.timeZone = NSTimeZone.defaultTimeZone()
-        notification.alertBody = message
-        notification.alertAction = "OK"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         
-//        lManager.locationManager.stopUpdatingLocation()
+        lManager.locationManager.stopUpdatingLocation()
     }
     
     func applicationWillResignActive(application: UIApplication) {

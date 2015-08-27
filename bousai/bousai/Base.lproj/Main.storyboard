@@ -30,9 +30,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ciy-1L-XZG">
-                                <rect key="frame" x="137" y="457" width="46" height="30"/>
+                                <rect key="frame" x="145" y="457" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="次へ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -73,49 +73,12 @@
                     <navigationItem key="navigationItem" id="fsT-9t-gjN"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="SVZ-Ud-fwp" kind="push" identifier="ToSetHome" id="Tdc-z6-OyP"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="ToTopView" id="778-e0-bXn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cU0-gi-8SN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="293" y="-491"/>
-        </scene>
-        <!--Set Home View Controller-->
-        <scene sceneID="h7v-dl-wSk">
-            <objects>
-                <viewController id="SVZ-Ud-fwp" customClass="SetHomeViewController" customModule="bousai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fnA-tg-c7R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CxN-YE-7IO">
-                                <rect key="frame" x="123" y="422" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="自宅を登録">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="5xa-M7-6ZD" kind="modal" id="Sfh-Fh-W0V"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aUY-Km-YJ0">
-                                <rect key="frame" x="146" y="485" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次へ">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="Gja-fV-VTu"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rl1-ZM-WAq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rlc-Rr-Amr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="696" y="-490"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rEE-zl-We8">
@@ -255,28 +218,93 @@
                                     <action selector="backBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="RtW-mv-8fS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6t8-cM-ZPN">
+                                <rect key="frame" x="72" y="530" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="避難所">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shelterBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="yoa-35-r3v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sav-MJ-pNb">
+                                <rect key="frame" x="139" y="530" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="震度">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="earthquakeBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="YQo-9x-z8s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7vc-DR-paP">
+                                <rect key="frame" x="214" y="530" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="津波">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tsunamiBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="5m8-61-nGq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="SF1-cn-0nu">
+                                <rect key="frame" x="0.0" y="332" width="320" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EAD-tf-vjp"/>
+                    <connections>
+                        <outlet property="underView" destination="SF1-cn-0nu" id="Cvu-X5-yQS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6s-ba-Lln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="293" y="211"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="nPU-Kk-uED">
+        <!--Table View Controller-->
+        <scene sceneID="Xzm-8a-Iqd">
             <objects>
-                <viewController id="5xa-M7-6ZD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EAW-fb-z0x">
+                <tableViewController id="SNR-aC-FLe" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WK8-rO-1dg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vsk-k1-A3v">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vsk-k1-A3v" id="2lz-Ic-3in">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SNR-aC-FLe" id="GvM-ch-6wA"/>
+                            <outlet property="delegate" destination="SNR-aC-FLe" id="p3F-aj-z7c"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAf-UM-FhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="211"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="s7K-CW-cV7">
+            <objects>
+                <viewController id="ujh-TU-fw3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="938-uH-jUj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tVf-YD-cTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfC-WT-f8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="-490"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -285,6 +313,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Gja-fV-VTu"/>
+        <segue reference="778-e0-bXn"/>
     </inferredMetricsTieBreakers>
 </document>

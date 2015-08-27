@@ -24,7 +24,7 @@ class DatabaseManagerObject: NSObject {
     
     func createTable() {
         db.open()
-        var sql = "CREATE TABLE IF NOT EXISTS test3 (id INTEGER PRIMARY KEY, lat INTEGER, lon INTEGER, date INTEGER);"
+        var sql = "CREATE TABLE IF NOT EXISTS location (id INTEGER PRIMARY KEY, lat char(10), lon char(10));"
         let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
         db.close()
         
@@ -33,30 +33,28 @@ class DatabaseManagerObject: NSObject {
         }
     }
     
-    func insertLocationData() {
+    func insertLocationData(lat: Double, lon: Double) {
+        println(lat)
         db.open()
-        var sql = "INSERT INTO test3 (lat, lon, date) VALUES (?, ?, ?);"
-        db.executeUpdate(sql, withArgumentsInArray: [36.342141, 132.875689, 4573])
+        var sql = "INSERT INTO location (lat, lon) VALUES (?, ?);"
+        db.executeUpdate(sql, withArgumentsInArray: [lat, lon])
+//        db.executeUpdate(sql, withArgumentsInArray: [36.342141, 132.875689])
         db.close()
     }
     
-    func getLocationData() -> NSString{
+    func getLocationData(){
         db.open()
-        var sql = "SELECT id, lat, lon, date FROM test3 ORDER BY id;"
+        var sql = "SELECT id, lat, lon FROM location ORDER BY id;"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
         while results.next() {
             let id = results.intForColumn("id")
-            let lat = results.intForColumn("lat")
-            let lon = results.intForColumn("lon")
-            let date = results.intForColumn("date")
+            let lat = results.doubleForColumn("lat")
+            let lon = results.doubleForColumn("lon")
             // print data
-            println("id:\(id) lat:\(lat)")
+            println("lat:\(lat) lon:\(lon)")
         }
         db.close()
-        
-        var string = "testttt"
-        return string
     }
     
     func sample() {

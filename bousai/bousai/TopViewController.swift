@@ -26,12 +26,11 @@ class TopViewController: UIViewController {
     
     func initializeDatabaseManager() {
         dbManager = DatabaseManagerObject()
-//        dbManager.makeInstanceOfFMDatabase()
+        dbManager.makeInstanceOfFMDatabase()
 //
-//        dbManager.createTable()
+        dbManager.createTable()
 //        dbManager.insertLocationData()
-//        var a = dbManager.getLocationData()
-//        println(a)
+        dbManager.getLocationData()
     }
     
     func initializeBousaiManager() {
@@ -54,7 +53,7 @@ class TopViewController: UIViewController {
         }
         else {
             //テスト用
-            selectedLat = 35.328800
+            selectedLat = 35.338800
             selectedLon = 139.538466
             
             toMainView()

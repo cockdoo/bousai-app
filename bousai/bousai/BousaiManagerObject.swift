@@ -20,35 +20,7 @@ class BousaiManagerObject: NSObject {
         return xyArray
     }
     
-    func getShelterInfo(lat: CLLocationDegrees, lon: CLLocationDegrees, zoom: Double) {
-        
-        var xyArray:NSArray = convertLatLonToTile(lat, lon: lon, z: zoom)
-        
-        println(xyArray[0])
-        
-        var URL:NSURL!
-        URL = NSURL(string: "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/hinanjo/\(Int(zoom))/\(xyArray[0])/\(xyArray[1]).geojson")
-        
-        let jsonData :NSData! = NSData(contentsOfURL: URL)
-        
-        if (jsonData != nil) {
-            let json = JSON(data: jsonData)
-            println(json)
-            
-            for (index: String, subJson: JSON) in json["features"] {
-                var coordinates = subJson["geometry"]["coordinates"]
-                var lat = coordinates[1].doubleValue
-                var lon = coordinates[0].doubleValue
-                var name: String! = subJson["properties"]["name"].string
-                
-                mapView.setMarker(lat, lon: lon, name: name)
-            }
-        }
-        
-//        if let title = json["features"][0]["type"].string {
-//            println(title)
-//        }
-    }
+    
     
     func sample0() {
         var URL:NSURL!

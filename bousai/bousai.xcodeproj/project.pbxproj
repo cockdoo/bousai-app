@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		067DCF70FA9284201E8DBD5E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D133608F760C945D3F62D4F8 /* libPods.a */; };
-		C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83822571B815A0B0005E135 /* SetHomeViewController.swift */; };
 		C87F57671B8CBA83009D174F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */; };
 		C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */; };
 		C88B28871B8D43EB0080A869 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B28861B8D43EB0080A869 /* Global.swift */; };
@@ -16,6 +15,7 @@
 		C89112D61B8E4C760096A0F5 /* newark_nj_1922.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */; };
 		C89112D81B8EB4960096A0F5 /* BousaiManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112D71B8EB4960096A0F5 /* BousaiManagerObject.swift */; };
 		C89112DC1B8EC4B30096A0F5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112DB1B8EC4B30096A0F5 /* SwiftyJSON.swift */; };
+		C89112DE1B8F88800096A0F5 /* ShelterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112DD1B8F88800096A0F5 /* ShelterListView.swift */; };
 		C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DC1B7C3A5800719166 /* AppDelegate.swift */; };
 		C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DE1B7C3A5800719166 /* ViewController.swift */; };
 		C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E01B7C3A5800719166 /* Main.storyboard */; };
@@ -43,7 +43,6 @@
 /* Begin PBXFileReference section */
 		5781C51923797BCEA723DA80 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC6003662D79ACFE7D372C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C83822571B815A0B0005E135 /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
 		C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagerObject.swift; sourceTree = "<group>"; };
 		C88B28861B8D43EB0080A869 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newark_nj_1922.jpg; sourceTree = "<group>"; };
 		C89112D71B8EB4960096A0F5 /* BousaiManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BousaiManagerObject.swift; sourceTree = "<group>"; };
 		C89112DB1B8EC4B30096A0F5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		C89112DD1B8F88800096A0F5 /* ShelterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShelterListView.swift; sourceTree = "<group>"; };
 		C8C109D71B7C3A5800719166 /* bousai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bousai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109DB1B7C3A5800719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109DC1B7C3A5800719166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +162,7 @@
 				C83822591B8160F60005E135 /* MainView */,
 				C89112D41B8E13CF0096A0F5 /* NSObject */,
 				C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */,
+				C89112DD1B8F88800096A0F5 /* ShelterListView.swift */,
 				C8C109E01B7C3A5800719166 /* Main.storyboard */,
 				C8C109E31B7C3A5800719166 /* Images.xcassets */,
 				C8C109E51B7C3A5800719166 /* LaunchScreen.xib */,
@@ -209,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */,
-				C83822571B815A0B0005E135 /* SetHomeViewController.swift */,
 			);
 			name = Walkthrough;
 			sourceTree = "<group>";
@@ -359,11 +359,11 @@
 				C8F4EBA01B80B69E0010B749 /* LocationViewController.swift in Sources */,
 				C8F4EB9C1B80A9A10010B749 /* ContentViewController.swift in Sources */,
 				C89112D31B8E0AB30096A0F5 /* MapViewObject.swift in Sources */,
-				C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */,
 				C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */,
 				C89112D81B8EB4960096A0F5 /* BousaiManagerObject.swift in Sources */,
 				C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */,
 				C88B28871B8D43EB0080A869 /* Global.swift in Sources */,
+				C89112DE1B8F88800096A0F5 /* ShelterListView.swift in Sources */,
 				C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
 				C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */,
