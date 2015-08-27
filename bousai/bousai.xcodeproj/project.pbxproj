@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		067DCF70FA9284201E8DBD5E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D133608F760C945D3F62D4F8 /* libPods.a */; };
 		C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83822571B815A0B0005E135 /* SetHomeViewController.swift */; };
 		C87F57671B8CBA83009D174F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */; };
 		C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */; };
 		C88B28871B8D43EB0080A869 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B28861B8D43EB0080A869 /* Global.swift */; };
 		C89112D31B8E0AB30096A0F5 /* MapViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */; };
 		C89112D61B8E4C760096A0F5 /* newark_nj_1922.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */; };
+		C89112D81B8EB4960096A0F5 /* BousaiManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112D71B8EB4960096A0F5 /* BousaiManagerObject.swift */; };
+		C89112DC1B8EC4B30096A0F5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89112DB1B8EC4B30096A0F5 /* SwiftyJSON.swift */; };
 		C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DC1B7C3A5800719166 /* AppDelegate.swift */; };
 		C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109DE1B7C3A5800719166 /* ViewController.swift */; };
 		C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E01B7C3A5800719166 /* Main.storyboard */; };
@@ -25,7 +28,6 @@
 		C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB931B8093270010B749 /* LocationManagerObject.swift */; };
 		C8F4EB9C1B80A9A10010B749 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB9B1B80A9A10010B749 /* ContentViewController.swift */; };
 		C8F4EBA01B80B69E0010B749 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */; };
-		C9C4FEDE05A4E65EC31584D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E96C626548B56C3EFE6D217 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		5781C51923797BCEA723DA80 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		9E96C626548B56C3EFE6D217 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6003662D79ACFE7D372C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C83822571B815A0B0005E135 /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
 		C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -48,6 +49,8 @@
 		C88B28861B8D43EB0080A869 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewObject.swift; sourceTree = "<group>"; };
 		C89112D51B8E4C760096A0F5 /* newark_nj_1922.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newark_nj_1922.jpg; sourceTree = "<group>"; };
+		C89112D71B8EB4960096A0F5 /* BousaiManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BousaiManagerObject.swift; sourceTree = "<group>"; };
+		C89112DB1B8EC4B30096A0F5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C8C109D71B7C3A5800719166 /* bousai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bousai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109DB1B7C3A5800719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109DC1B7C3A5800719166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		C8F4EB931B8093270010B749 /* LocationManagerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerObject.swift; sourceTree = "<group>"; };
 		C8F4EB9B1B80A9A10010B749 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		D133608F760C945D3F62D4F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,7 @@
 			files = (
 				C87F57671B8CBA83009D174F /* libsqlite3.0.dylib in Frameworks */,
 				C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */,
-				C9C4FEDE05A4E65EC31584D0 /* libPods.a in Frameworks */,
+				067DCF70FA9284201E8DBD5E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +97,7 @@
 			children = (
 				C87F57661B8CBA83009D174F /* libsqlite3.0.dylib */,
 				C8F4EB911B808B0B0010B749 /* CoreLocation.framework */,
-				9E96C626548B56C3EFE6D217 /* libPods.a */,
+				D133608F760C945D3F62D4F8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +126,7 @@
 				C8F4EB931B8093270010B749 /* LocationManagerObject.swift */,
 				C87F57681B8CBB0C009D174F /* DatabaseManagerObject.swift */,
 				C89112D21B8E0AB30096A0F5 /* MapViewObject.swift */,
+				C89112D71B8EB4960096A0F5 /* BousaiManagerObject.swift */,
 			);
 			name = NSObject;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 		C8C109D91B7C3A5800719166 /* bousai */ = {
 			isa = PBXGroup;
 			children = (
+				C89112DB1B8EC4B30096A0F5 /* SwiftyJSON.swift */,
 				C8C109DC1B7C3A5800719166 /* AppDelegate.swift */,
 				C88B28861B8D43EB0080A869 /* Global.swift */,
 				C8F4EB9D1B80B5A80010B749 /* PageViewController */,
@@ -355,11 +361,13 @@
 				C89112D31B8E0AB30096A0F5 /* MapViewObject.swift in Sources */,
 				C83822581B815A0B0005E135 /* SetHomeViewController.swift in Sources */,
 				C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */,
+				C89112D81B8EB4960096A0F5 /* BousaiManagerObject.swift in Sources */,
 				C8C109DF1B7C3A5800719166 /* ViewController.swift in Sources */,
 				C88B28871B8D43EB0080A869 /* Global.swift in Sources */,
 				C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */,
 				C8C109DD1B7C3A5800719166 /* AppDelegate.swift in Sources */,
 				C87F57691B8CBB0C009D174F /* DatabaseManagerObject.swift in Sources */,
+				C89112DC1B8EC4B30096A0F5 /* SwiftyJSON.swift in Sources */,
 				C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +500,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bousai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -508,6 +517,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bousai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

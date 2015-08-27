@@ -1,9 +1,6 @@
-CLANG_CXX_LANGUAGE_STANDARD = compiler-default
 FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/GoogleMaps/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/GoogleMaps" "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMaps" "${PODS_ROOT}/Headers/Public/Realm" "${PODS_ROOT}/Headers/Public/Realm/realm"
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Realm/core"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FMDB" -isystem "${PODS_ROOT}/Headers/Public/GoogleMaps" -isystem "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMaps" -isystem "${PODS_ROOT}/Headers/Public/Realm" -isystem "${PODS_ROOT}/Headers/Public/Realm/realm"
-OTHER_CPLUSPLUSFLAGS = -std=c++1y $(inherited) -std=c++1y $(inherited) -std=c++1y $(inherited)
-OTHER_LDFLAGS = $(inherited) -ObjC -l"FMDB" -l"Realm" -l"c++" -l"icucore" -l"realm-ios" -l"sqlite3" -l"z" -framework "AVFoundation" -framework "Accelerate" -framework "CoreBluetooth" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreText" -framework "GLKit" -framework "GoogleMaps" -framework "ImageIO" -framework "OpenGLES" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/GoogleMaps" "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMaps"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FMDB" -isystem "${PODS_ROOT}/Headers/Public/GoogleMaps" -isystem "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMaps"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"FMDB" -l"c++" -l"icucore" -l"sqlite3" -l"z" -framework "AVFoundation" -framework "Accelerate" -framework "CoreBluetooth" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreText" -framework "GLKit" -framework "GoogleMaps" -framework "ImageIO" -framework "OpenGLES" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"
 PODS_ROOT = ${SRCROOT}/Pods

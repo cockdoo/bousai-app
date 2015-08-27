@@ -11,15 +11,23 @@ import GoogleMaps
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var mapView: MapViewObject!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initializeMap()
+        setShelter()
+    }
+    
+    func initializeMap() {
+        mapView = MapViewObject()
         mapView.initializeSetting()
-        mapView.moveTo(selecedLat, lon: selecedLon, zoom: 16)
-//        mapView.overLay()
-//        mapView.test()
+        mapView.moveTo(selectedLat, lon: selectedLon, zoom: 14)
+        self.view.addSubview(mapView)
+        //        mapView.setOverLay()
+    }
+    
+    func setShelter() {
+        bManager.getShelterInfo(selectedLat, lon: selectedLon, zoom: 14)
     }
 
     override func didReceiveMemoryWarning() {

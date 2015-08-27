@@ -15,7 +15,8 @@ class TopViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         initializeLocationManager()
-//        initializeDatabaseManager()
+        initializeDatabaseManager()
+        initializeBousaiManager()
     }
     
     func initializeLocationManager() {
@@ -25,18 +26,37 @@ class TopViewController: UIViewController {
     
     func initializeDatabaseManager() {
         dbManager = DatabaseManagerObject()
-        dbManager.makeInstanceOfFMDatabase()
-
-        dbManager.createTable()
-        dbManager.insertLocationData()
-        var a = dbManager.getLocationData()
-        println(a)
+//        dbManager.makeInstanceOfFMDatabase()
+//
+//        dbManager.createTable()
+//        dbManager.insertLocationData()
+//        var a = dbManager.getLocationData()
+//        println(a)
+    }
+    
+    func initializeBousaiManager() {
+        bManager = BousaiManagerObject()
+//        bManager.sample0()
+//        bManager.sample1()
+        
     }
     
     @IBAction func currentLocationButtonTapped(sender: AnyObject) {
         if (lManager.lat != nil && lManager.lon != nil) {
-            selecedLat = lManager.lat
-            selecedLon = lManager.lon
+            selectedLat = lManager.lat
+            selectedLon = lManager.lon
+            
+            //テスト用
+            selectedLat = 35.328800
+            selectedLon = 139.538466
+            
+            toMainView()
+        }
+        else {
+            //テスト用
+            selectedLat = 35.328800
+            selectedLon = 139.538466
+            
             toMainView()
         }
     }

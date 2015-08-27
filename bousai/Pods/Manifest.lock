@@ -5,18 +5,13 @@ PODS:
   - FMDB/standard (2.5):
     - FMDB/common
   - GoogleMaps (1.10.2)
-  - Realm (0.94.1):
-    - Realm/Headers (= 0.94.1)
-  - Realm/Headers (0.94.1)
 
 DEPENDENCIES:
   - FMDB
   - GoogleMaps
-  - Realm
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   GoogleMaps: 5c92e599b07b0a2a9b367c5dd128edc629bddfea
-  Realm: d999a6cf0b41577a077349c9cc9d496cc62a7d17
 
 COCOAPODS: 0.38.2

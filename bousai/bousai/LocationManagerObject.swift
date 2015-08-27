@@ -9,8 +9,8 @@
 import UIKit
 import CoreLocation
 
-var selecedLat: CLLocationDegrees!
-var selecedLon: CLLocationDegrees!
+var selectedLat: CLLocationDegrees!
+var selectedLon: CLLocationDegrees!
 
 class LocationManagerObject: NSObject, CLLocationManagerDelegate {
    

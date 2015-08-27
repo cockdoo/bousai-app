@@ -10,4 +10,7 @@ import UIKit
 
 var lManager: LocationManagerObject!
 var dbManager: DatabaseManagerObject!
+var bManager: BousaiManagerObject!
+
+var mapView: MapViewObject!
 
