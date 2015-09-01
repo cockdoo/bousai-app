@@ -13,7 +13,7 @@ class ShelterListView: UIView {
     init() {
         super.init(frame: CGRectZero)
         
-        self.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
     }
     
     required init(coder aDecoder: NSCoder) {

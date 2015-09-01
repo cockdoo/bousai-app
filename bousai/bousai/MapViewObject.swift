@@ -17,7 +17,7 @@ class MapViewObject: GMSMapView, GMSMapViewDelegate {
         self.settings.compassButton = true
         self.delegate = self
         
-        self.frame = CGRectMake(0, 0, 320, 320)
+        self.frame = CGRectMake(0, 64, 320, 270)
     }
     
     func moveTo(lat: CLLocationDegrees, lon: CLLocationDegrees, zoom:Float) {
@@ -31,12 +31,11 @@ class MapViewObject: GMSMapView, GMSMapViewDelegate {
             return NSURL(string: url)!
         }
         var layer = GMSURLTileLayer(URLConstructor: urls)
-        
         layer.zIndex = 100
         layer.opacity = 0.5
         layer.map = self
     }
-    
+
     func setEarthquakeOverlay() {
         var urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
             var url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/shindo_r/\(zoom)/\(x)/\(y).png"
@@ -59,13 +58,6 @@ class MapViewObject: GMSMapView, GMSMapViewDelegate {
         layer.zIndex = 100
         layer.opacity = 0.5
         layer.map = self
-    }
-    
-    func setMarker(lat:Double, lon:Double, name: String) {
-        var position = CLLocationCoordinate2DMake(lat, lon)
-        var marker = GMSMarker(position: position)
-        marker.title = name
-        marker.map = self
     }
     
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {

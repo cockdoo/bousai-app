@@ -34,9 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
         //UserDefaultのデフォルト設定
-        let ud = NSUserDefaults.standardUserDefaults()
+        ud = NSUserDefaults.standardUserDefaults()
         var dic = ["firstLaunch": true]
         ud.registerDefaults(dic)
+        
+        var dic2 = ["chiriinMap": false]
+        ud.registerDefaults(dic2)
         
         var isFirstLaunch: Bool
         
@@ -67,8 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
         println("background fetch!")
-        lManager.settingLocationManager()
-        lManager.locationManager.startUpdatingLocation()
+        if (lManager != nil) {
+            lManager.settingLocationManager()
+            lManager.locationManager.startUpdatingLocation()
+        }
         
         NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: false)
     }

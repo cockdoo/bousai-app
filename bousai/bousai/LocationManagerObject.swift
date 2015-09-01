@@ -9,9 +9,6 @@
 import UIKit
 import CoreLocation
 
-var selectedLat: CLLocationDegrees!
-var selectedLon: CLLocationDegrees!
-
 class LocationManagerObject: NSObject, CLLocationManagerDelegate {
    
     var currentLocation: CLLocation?
@@ -20,6 +17,9 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     var lon: CLLocationDegrees!
     
     func settingLocationManager() {
+        lat = 0
+        lon = 0
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         // 取得精度の設定.
@@ -73,6 +73,56 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     // 位置情報取得に失敗した時に呼び出されるデリゲート.
     func locationManager(manager: CLLocationManager!,didFailWithError error: NSError!){
         print("locationManager error")
+    }
+    
+    var count: Int = 0
+    
+    func revGeocoding(lat: Double, lon: Double) {
+        let location = CLLocation(latitude: lat, longitude: lon)
+        var geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks:[AnyObject]!, error:NSError!) -> Void in
+            if (error == nil && placemarks.count > 0) {
+                let placemark: CLPlacemark! = placemarks[0] as? CLPlacemark
+//                println("Country = \(placemark.country)")
+//                println("Postal Code = \(placemark.postalCode)")
+//                println("Administrative Area = \(placemark.administrativeArea)")
+//                println("Sub Administrative Area = \(placemark.subAdministrativeArea)")
+                println("Locality = \(placemark.locality)")
+                println("Sub Locality = \(placemark.subLocality)")
+//                println("Throughfare = \(placemark.thoroughfare)")
+                
+                if (placemark.locality != nil && placemark.subLocality != nil) {
+                    dbManager.insertToLivingAreaTable(lat, lon: lon, locality: placemark.locality, sublocality: placemark.subLocality)
+                }
+                
+                self.count = self.count + 1
+                println(self.count)
+                
+                if (self.count == locationTableRows) {
+                    println("全データ挿入完了！")
+                    dbManager.getDistinctPlaceList()
+                }
+                
+            } else if (error == nil && placemarks.count == 0) {
+                println("No results were returned.")
+            } else if (error != nil) {
+                println("An error occured = \(error.localizedDescription)")
+            }
+        })
+    }
+    
+    func getStreetViewURL(lat: CLLocationDegrees, lon: CLLocationDegrees, width: Int, height: Int) -> UIImage {
+        var apiKey = "AIzaSyCslSIWQG0dnhS8BaeCIQyUxttCliecBdA"
+        var heading = arc4random_uniform(360)
+        var urlString = "http://maps.googleapis.com/maps/api/streetview?size=\(width*2)x\(height*2)&location=\(lat),\(lon)&heading=\(heading)&pitch=-0.76&sensor=true&fov=90&key=\(apiKey)"
+        
+        let url = NSURL(string: urlString)
+        var err: NSError?
+        var imageData :NSData = NSData(contentsOfURL: url!,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)!;
+        
+        var img: UIImage! = UIImage(data: imageData)
+        
+        return img
     }
 }
 

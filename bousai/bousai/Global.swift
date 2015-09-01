@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 var lManager: LocationManagerObject!
 var dbManager: DatabaseManagerObject!
@@ -14,3 +15,12 @@ var bManager: BousaiManagerObject!
 
 var mapView: MapViewObject!
 
+var selectedLat: CLLocationDegrees!
+var selectedLon: CLLocationDegrees!
+
+var selectedName: String!
+var selectedAddress: String!
+
+var locationTableRows: Int!
+
+var ud: NSUserDefaults!
