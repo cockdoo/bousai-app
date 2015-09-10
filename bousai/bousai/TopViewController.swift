@@ -24,6 +24,22 @@ class TopViewController: UIViewController {
         initializeBousaiManager()
         
         setLivingArea()
+        
+        overView = UIView(frame: CGRectMake(0, 64, 320, 568-64))
+        self.view.addSubview(overView)
+        
+        setAreaBtnsBg()
+        setAreaBtns()
+    }
+    
+    @IBAction func refreshBtnTouched(sender: AnyObject) {
+        overView.removeFromSuperview()
+        
+        overView = UIView(frame: CGRectMake(0, 64, 320, 568-64))
+        self.view.addSubview(overView)
+        
+        setLivingArea()
+        setAreaBtnsBg()
         setAreaBtns()
     }
     
@@ -50,19 +66,19 @@ class TopViewController: UIViewController {
             selectedLon = lManager.lon
             
             //テスト用
-            selectedLat = 35.328800
-            selectedLon = 139.538466
+//            selectedLat = 35.328800
+//            selectedLon = 139.538466
             
             selectedName = "現在地"
             toMainView()
         }
         else {
             //テスト用
-            selectedLat = 35.338800
-            selectedLon = 139.538466
-            selectedName = "現在地"
-            
-            toMainView()
+//            selectedLat = 35.338800
+//            selectedLon = 139.538466
+//            selectedName = "現在地"
+//            
+//            toMainView()
         }
     }
     
@@ -87,9 +103,37 @@ class TopViewController: UIViewController {
         dbManager.getLocationData()
     }
     
+    func setAreaBtnsBg() {
+        var currentBtnBg = UIView(frame: CGRectMake(10, 10, 300, 154))
+        currentBtnBg.layer.cornerRadius = 10
+        currentBtnBg.layer.borderColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.4).CGColor
+        currentBtnBg.layer.borderWidth = 2;
+        overView.addSubview(currentBtnBg)
+        
+        for var i = 0; i < 4; i++ {
+            var rect: CGRect!
+            switch i {
+            case 0:
+                rect = CGRectMake(10, 568-64-20-310, 145, 155)
+            case 1:
+                rect = CGRectMake(10+145+10, 568-64-20-310, 145, 155)
+            case 2:
+                rect = CGRectMake(10, 568-64-10-155, 145, 155)
+            case 3:
+                rect = CGRectMake(10+145+10, 568-64-10-155, 145, 155)
+            default:
+                break
+            }
+            
+            var areaBtnBg = UIView(frame: rect)
+            areaBtnBg.layer.cornerRadius = 10
+            areaBtnBg.layer.borderColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.4).CGColor
+            areaBtnBg.layer.borderWidth = 2;
+            overView.addSubview(areaBtnBg)
+        }
+    }
+    
     func setAreaBtns() {
-        overView = UIView(frame: CGRectMake(0, 64, 320, 568-64))
-        self.view.addSubview(overView)
         
         currentBtnTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("setCurrentView"), userInfo: nil, repeats: true)
         
@@ -132,11 +176,11 @@ class TopViewController: UIViewController {
                 bgView.layer.shadowOpacity = 0.3
                 bgView.layer.masksToBounds = false
                 
-                var label = UILabel(frame: CGRectMake(0, 128, 135, 28))
+                var label = UILabel(frame: CGRectMake(0, 127, 135, 28))
                 label.text = place.componentsSeparatedByString("-")[1]
                 label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
                 label.textAlignment = NSTextAlignment.Right
-                label.font = UIFont.systemFontOfSize(18)
+                label.font = UIFont(name: "Hiragino Kaku Gothic ProN", size: 18)
                 
                 overView.addSubview(bgView)
                 overView.addSubview(areaBtn)
@@ -153,7 +197,7 @@ class TopViewController: UIViewController {
     
     func setCurrentView(){
         if (lManager.lat != 0 && lManager.lon != 0) {
-            println("よしきた")
+
             //現在地ボタンの作成
             var currentBtn = UIButton(frame: CGRectMake(10, 10, 300, 154))
             currentBtn.backgroundColor = UIColor(red: 56/256, green: 204/255, blue: 182/255, alpha: 1)
@@ -174,11 +218,17 @@ class TopViewController: UIViewController {
             label.text = "現在地"
             label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
             label.textAlignment = NSTextAlignment.Right
-            label.font = UIFont.systemFontOfSize(18)
+            label.font = UIFont(name: "Hiragino Kaku Gothic ProN", size: 18)
+            
+            var pinImg = UIImage(named: "pin_top.png")
+            var pinImageView = UIImageView(image: pinImg)
+            pinImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            pinImageView.frame = CGRectMake(214, 131, 20, 20)
             
             overView.addSubview(bgView)
             overView.addSubview(currentBtn)
             currentBtn.addSubview(label)
+            currentBtn.addSubview(pinImageView)
             
             var img = lManager.getStreetViewURL(lManager.lat, lon: lManager.lon, width: 300, height: 126)
             var imageView = UIImageView(image: img)
@@ -188,7 +238,7 @@ class TopViewController: UIViewController {
             currentBtnTimer.invalidate()
         }
         else {
-            println("今じゃない")
+
         }
     }
     

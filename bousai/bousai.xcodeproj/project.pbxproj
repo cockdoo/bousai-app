@@ -54,6 +54,10 @@
 		C8D9ABAB1B958793002D90B6 /* pin_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABA71B958793002D90B6 /* pin_3.png */; };
 		C8D9ABAC1B958793002D90B6 /* pin_4.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABA81B958793002D90B6 /* pin_4.png */; };
 		C8D9ABAE1B9597DB002D90B6 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABAD1B9597DB002D90B6 /* pin.png */; };
+		C8D9ABB21B959CF8002D90B6 /* haikei.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABB11B959CF8002D90B6 /* haikei.png */; };
+		C8D9ABB41B95A38E002D90B6 /* pin_top.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABB31B95A38E002D90B6 /* pin_top.png */; };
+		C8D9ABB61B95BFF6002D90B6 /* center.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABB51B95BFF6002D90B6 /* center.png */; };
+		C8D9ABB81B95F0A7002D90B6 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABB71B95F0A7002D90B6 /* refresh.png */; };
 		C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8B1B8088B70010B749 /* TopViewController.swift */; };
 		C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8D1B8089580010B749 /* MainViewController.swift */; };
 		C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F4EB911B808B0B0010B749 /* CoreLocation.framework */; };
@@ -125,6 +129,10 @@
 		C8D9ABA71B958793002D90B6 /* pin_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_3.png; sourceTree = "<group>"; };
 		C8D9ABA81B958793002D90B6 /* pin_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_4.png; sourceTree = "<group>"; };
 		C8D9ABAD1B9597DB002D90B6 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		C8D9ABB11B959CF8002D90B6 /* haikei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haikei.png; sourceTree = "<group>"; };
+		C8D9ABB31B95A38E002D90B6 /* pin_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_top.png; sourceTree = "<group>"; };
+		C8D9ABB51B95BFF6002D90B6 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
+		C8D9ABB71B95F0A7002D90B6 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		C8E2DC481B82D3B4008F36AB /* bousai-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bousai-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8F4EB8B1B8088B70010B749 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		C8F4EB8D1B8089580010B749 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +278,10 @@
 		C8D46D441B93A8DD0075D362 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C8D9ABB71B95F0A7002D90B6 /* refresh.png */,
+				C8D9ABB51B95BFF6002D90B6 /* center.png */,
+				C8D9ABB31B95A38E002D90B6 /* pin_top.png */,
+				C8D9ABB11B959CF8002D90B6 /* haikei.png */,
 				C8D9ABAD1B9597DB002D90B6 /* pin.png */,
 				C8D9ABA51B958793002D90B6 /* pin_1.png */,
 				C8D9ABA61B958793002D90B6 /* pin_2.png */,
@@ -433,6 +445,7 @@
 				C8D9ABA01B958268002D90B6 /* icon-60@3x.png in Resources */,
 				C8D9AB781B953F7C002D90B6 /* sinndo_1.png in Resources */,
 				C8C109E21B7C3A5800719166 /* Main.storyboard in Resources */,
+				C8D9ABB81B95F0A7002D90B6 /* refresh.png in Resources */,
 				C8D9ABA91B958793002D90B6 /* pin_1.png in Resources */,
 				C8D9AB7E1B955578002D90B6 /* back0.png in Resources */,
 				C8D9AB861B957AF7002D90B6 /* infoemation.png in Resources */,
@@ -440,10 +453,13 @@
 				C8D9ABAA1B958793002D90B6 /* pin_2.png in Resources */,
 				C8D9AB7A1B9551F0002D90B6 /* syousai.png in Resources */,
 				C8D9AB9F1B958268002D90B6 /* icon-60@2x.png in Resources */,
+				C8D9ABB21B959CF8002D90B6 /* haikei.png in Resources */,
 				C8D9ABAE1B9597DB002D90B6 /* pin.png in Resources */,
 				C8D9AB761B94E089002D90B6 /* sinnsuiiki.png in Resources */,
 				C8D9AB821B957156002D90B6 /* setting.png in Resources */,
+				C8D9ABB61B95BFF6002D90B6 /* center.png in Resources */,
 				C8D9AB9B1B958268002D90B6 /* icon-29@2x.png in Resources */,
+				C8D9ABB41B95A38E002D90B6 /* pin_top.png in Resources */,
 				C8D9ABAB1B958793002D90B6 /* pin_3.png in Resources */,
 				C8D46D401B93A8D90075D362 /* hinnan.png in Resources */,
 				C89112D61B8E4C760096A0F5 /* newark_nj_1922.jpg in Resources */,

@@ -13,10 +13,13 @@ class LocationViewController: UIViewController,  CLLocationManagerDelegate {
     
     var locationManager:CLLocationManager!
     
+    @IBOutlet weak var startBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        startBtn.layer.cornerRadius = 5;
         settingLocationManager()
     }
     

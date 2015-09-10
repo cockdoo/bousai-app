@@ -21,7 +21,9 @@ class DetailViewController: UIViewController, GMSMapViewDelegate {
         setStreetView()
         
         placeName.text = selectedName
+        placeName.adjustsFontSizeToFitWidth = true
         address.text = selectedAddress
+        address.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func backBtnTouched(sender: AnyObject) {

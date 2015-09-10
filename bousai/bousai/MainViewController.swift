@@ -25,6 +25,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var earthquakeDegree: UILabel!
     
     
+    @IBOutlet weak var centerImageView: UIImageView!
+    
+    
     var shelterArray: NSMutableArray!
     
     override func viewDidLoad() {
@@ -36,6 +39,8 @@ class MainViewController: UIViewController {
         titleName.text = selectedName
         
         setShelter()
+        
+        self.view.bringSubviewToFront(centerImageView)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -177,7 +182,6 @@ class MainViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         marker.icon = resizeImage
-        
         marker.map = mapView
     }
     
@@ -213,10 +217,12 @@ class MainViewController: UIViewController {
         
         shelterView.addSubview(listBtn)
         
-        var label = UILabel(frame: CGRectMake(10, 0, 300, 34))
+        var label = UILabel(frame: CGRectMake(10, 0, 264, 34))
         label.textAlignment = NSTextAlignment.Left
         label.text = "\(index + 1)　\(name)"
-        label.font = UIFont.boldSystemFontOfSize(16)
+        label.font = UIFont(name: "Hiragino Kaku Gothic ProN", size: 14)
+        label.font = UIFont.boldSystemFontOfSize(14)
+        label.adjustsFontSizeToFitWidth = true
         
         var img = UIImage(named: "syousai.png")
         var imageView = UIImageView(image: img)

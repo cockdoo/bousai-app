@@ -29,26 +29,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dn0-kt-Ty9">
-                                <rect key="frame" x="76" y="374" width="150" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="haikei.png" id="zLr-9i-pm3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="位置情報を許可にする">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dn0-kt-Ty9">
+                                <rect key="frame" x="20" y="510" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="始める">
+                                    <color key="titleColor" red="0.2196078431372549" green="0.80000000000000004" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="requestButtonTapped:" destination="zTD-Al-IQz" eventType="touchUpInside" id="s1L-yJ-hOZ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoemation.png" id="zLr-9i-pm3">
-                                <rect key="frame" x="0.0" y="-31" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.21960784310000001" green="0.80000000000000004" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="fsT-9t-gjN"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="startBtn" destination="dn0-kt-Ty9" id="XYE-mK-xxp"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="ToTopView" id="778-e0-bXn"/>
                     </connections>
                 </viewController>
@@ -151,7 +153,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7j4-2J-EqD">
-                                        <rect key="frame" x="282" y="30" width="26" height="26"/>
+                                        <rect key="frame" x="281" y="32" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="question.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,11 +162,21 @@
                                             <segue destination="PJv-Xf-ntj" kind="modal" id="t0Y-v5-mQD"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aHq-q6-q36">
+                                        <rect key="frame" x="13" y="29" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="refresh.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="refreshBtnTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ntj-3g-pjS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2196078431372549" green="0.80000000000000004" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wuq-5w-6kV"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -192,6 +204,36 @@
                                 </state>
                                 <connections>
                                     <action selector="backBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="RtW-mv-8fS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6t8-cM-ZPN">
+                                <rect key="frame" x="80" y="516" width="80" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="hinnan.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shelterBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="yoa-35-r3v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sav-MJ-pNb">
+                                <rect key="frame" x="160" y="516" width="80" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="sinndo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="earthquakeBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="YQo-9x-z8s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7vc-DR-paP">
+                                <rect key="frame" x="240" y="516" width="80" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="tsunami.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tsunamiBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="5m8-61-nGq"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="SF1-cn-0nu">
@@ -370,41 +412,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.80000000000000004" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6t8-cM-ZPN">
-                                <rect key="frame" x="80" y="516" width="80" height="53"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="center.png" id="aik-DX-Ghw">
+                                <rect key="frame" x="150" y="189" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="hinnan.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shelterBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="yoa-35-r3v"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sav-MJ-pNb">
-                                <rect key="frame" x="160" y="516" width="80" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="sinndo.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="earthquakeBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="YQo-9x-z8s"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7vc-DR-paP">
-                                <rect key="frame" x="240" y="516" width="80" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="tsunami.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tsunamiBtnTouched:" destination="S2A-gg-drD" eventType="touchUpInside" id="5m8-61-nGq"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EAD-tf-vjp"/>
                     <connections>
+                        <outlet property="centerImageView" destination="aik-DX-Ghw" id="WPZ-50-yQt"/>
                         <outlet property="earthquakeDegree" destination="9PX-WJ-yNq" id="lpZ-NL-Rxk"/>
                         <outlet property="earthquakeView" destination="9Y2-rL-A55" id="ssX-WV-Qg7"/>
                         <outlet property="shelterView" destination="dTC-kN-k6H" id="PPe-hv-cv9"/>
@@ -584,9 +601,12 @@
     <resources>
         <image name="back0.png" width="180" height="120"/>
         <image name="batsu.png" width="76" height="76"/>
+        <image name="center.png" width="40" height="40"/>
+        <image name="haikei.png" width="750" height="1334"/>
         <image name="hinnan.png" width="180" height="120"/>
         <image name="infoemation.png" width="750" height="1334"/>
         <image name="question.png" width="64" height="64"/>
+        <image name="refresh.png" width="64" height="64"/>
         <image name="setting.png" width="64" height="64"/>
         <image name="sinndo.png" width="180" height="120"/>
         <image name="sinndo_1.png" width="225" height="221"/>

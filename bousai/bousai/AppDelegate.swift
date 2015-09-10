@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //notification
 //        UIApplication.sharedApplication().cancelAllLocalNotifications();
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+//        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
         
         //background fetchの登録
         UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var dic2 = ["chiriinMap": false]
         ud.registerDefaults(dic2)
+        
+        var dic3 = ["nonData": true]
+        ud.registerDefaults(dic3)
         
         var isFirstLaunch: Bool
         
@@ -83,21 +86,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var message = "緯度:\(lManager.lat) 経度\(lManager.lon)"
             dbManager.insertLocationData(lManager.lat, lon: lManager.lon)
             
-            var notification = UILocalNotification()
-            notification.fireDate = NSDate()
-            notification.timeZone = NSTimeZone.defaultTimeZone()
-            notification.alertBody = message
-            notification.alertAction = "OK"
-            notification.soundName = UILocalNotificationDefaultSoundName
-            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+//            var notification = UILocalNotification()
+//            notification.fireDate = NSDate()
+//            notification.timeZone = NSTimeZone.defaultTimeZone()
+//            notification.alertBody = message
+//            notification.alertAction = "OK"
+//            notification.soundName = UILocalNotificationDefaultSoundName
+//            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }else {
-            var notification = UILocalNotification()
-            notification.fireDate = NSDate()
-            notification.timeZone = NSTimeZone.defaultTimeZone()
-            notification.alertBody = "取得できなかった"
-            notification.alertAction = "OK"
-            notification.soundName = UILocalNotificationDefaultSoundName
-            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+//            var notification = UILocalNotification()
+//            notification.fireDate = NSDate()
+//            notification.timeZone = NSTimeZone.defaultTimeZone()
+//            notification.alertBody = "取得できなかった"
+//            notification.alertAction = "OK"
+//            notification.soundName = UILocalNotificationDefaultSoundName
+//            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
         
         

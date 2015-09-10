@@ -66,6 +66,13 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
             
             lat = currentLocation?.coordinate.latitude
             lon = currentLocation?.coordinate.longitude
+            
+            if (ud.boolForKey("nonData") == true)  {
+                println("初回だけすぐにデータを挿入")
+                dbManager.insertLocationData(lat, lon: lon)
+                
+                ud.setBool(false, forKey: "nonData")
+            }
         }
         //        manager.location.coordinate.latitude
     }
@@ -73,6 +80,8 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     // 位置情報取得に失敗した時に呼び出されるデリゲート.
     func locationManager(manager: CLLocationManager!,didFailWithError error: NSError!){
         print("locationManager error")
+        
+        locationManager.startUpdatingLocation()
     }
     
     var count: Int = 0
@@ -100,6 +109,7 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
                 
                 if (self.count == locationTableRows) {
                     println("全データ挿入完了！")
+                    self.count = 0
                     dbManager.getDistinctPlaceList()
                 }
                 
