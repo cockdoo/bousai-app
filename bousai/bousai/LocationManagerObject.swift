@@ -90,6 +90,7 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     
     var count: Int = 0
     
+    
     func revGeocoding(lat: Double, lon: Double) {
         let location = CLLocation(latitude: lat, longitude: lon)
         var geocoder = CLGeocoder()
