@@ -21,27 +21,27 @@ class MapViewObject: GMSMapView, GMSMapViewDelegate {
     }
     
     func moveTo(lat: CLLocationDegrees, lon: CLLocationDegrees, zoom:Float) {
-        var camera = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: zoom)
+        let camera = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: zoom)
         self.camera = camera
     }
     
     func setOverLay() {
-        var urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
-            var url = "http://cyberjapandata.gsi.go.jp/xyz/std/\(zoom)/\(x)/\(y).png"
+        let urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
+            let url = "http://cyberjapandata.gsi.go.jp/xyz/std/\(zoom)/\(x)/\(y).png"
             return NSURL(string: url)!
         }
-        var layer = GMSURLTileLayer(URLConstructor: urls)
+        let layer = GMSURLTileLayer(URLConstructor: urls)
         layer.zIndex = 100
         layer.opacity = 0.5
         layer.map = self
     }
 
     func setEarthquakeOverlay() {
-        var urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
-            var url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/shindo_r/\(zoom)/\(x)/\(y).png"
+        let urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
+            let url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/shindo_r/\(zoom)/\(x)/\(y).png"
             return NSURL(string: url)!
         }
-        var layer = GMSURLTileLayer(URLConstructor: urls)
+        let layer = GMSURLTileLayer(URLConstructor: urls)
         
         layer.zIndex = 100
         layer.opacity = 0.5
@@ -49,11 +49,11 @@ class MapViewObject: GMSMapView, GMSMapViewDelegate {
     }
     
     func setTsunamiOverlay() {
-        var urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
-            var url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/tsunami1_r/\(zoom)/\(x)/\(y).png"
+        let urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
+            let url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/tsunami1_r/\(zoom)/\(x)/\(y).png"
             return NSURL(string: url)!
         }
-        var layer = GMSURLTileLayer(URLConstructor: urls)
+        let layer = GMSURLTileLayer(URLConstructor: urls)
         
         layer.zIndex = 100
         layer.opacity = 0.5

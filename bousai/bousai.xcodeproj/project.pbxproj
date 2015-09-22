@@ -22,6 +22,7 @@
 		C8C109E41B7C3A5800719166 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E31B7C3A5800719166 /* Images.xcassets */; };
 		C8C109E71B7C3A5800719166 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C109E51B7C3A5800719166 /* LaunchScreen.xib */; };
 		C8C109F31B7C3A5900719166 /* bousaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C109F21B7C3A5900719166 /* bousaiTests.swift */; };
+		C8D148AF1BA9954400DCF2B6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D148AE1BA9954400DCF2B6 /* Storyboard.storyboard */; };
 		C8D46D401B93A8D90075D362 /* hinnan.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D46D3C1B93A8D90075D362 /* hinnan.png */; };
 		C8D46D411B93A8D90075D362 /* sinndo.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D46D3D1B93A8D90075D362 /* sinndo.png */; };
 		C8D46D421B93A8D90075D362 /* top_back.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D46D3E1B93A8D90075D362 /* top_back.png */; };
@@ -97,6 +98,7 @@
 		C8C109EC1B7C3A5900719166 /* bousaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bousaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C109F11B7C3A5900719166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C109F21B7C3A5900719166 /* bousaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bousaiTests.swift; sourceTree = "<group>"; };
+		C8D148AE1BA9954400DCF2B6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		C8D46D3C1B93A8D90075D362 /* hinnan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hinnan.png; sourceTree = "<group>"; };
 		C8D46D3D1B93A8D90075D362 /* sinndo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sinndo.png; sourceTree = "<group>"; };
 		C8D46D3E1B93A8D90075D362 /* top_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_back.png; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				C8D9AB891B957E1F002D90B6 /* font */,
 				C8D46D441B93A8DD0075D362 /* image */,
 				C8C109E01B7C3A5800719166 /* Main.storyboard */,
+				C8D148AE1BA9954400DCF2B6 /* Storyboard.storyboard */,
 				C8C109E31B7C3A5800719166 /* Images.xcassets */,
 				C8C109E51B7C3A5800719166 /* LaunchScreen.xib */,
 				C8C109DA1B7C3A5800719166 /* Supporting Files */,
@@ -392,6 +395,8 @@
 		C8C109CF1B7C3A5800719166 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = TaigaSano;
 				TargetAttributes = {
@@ -437,6 +442,7 @@
 				C8D9AB8E1B957EAD002D90B6 /* ヒラギノ角ゴOld StdN W6.otf in Resources */,
 				C8D9AB8F1B957EAD002D90B6 /* ヒラギノ角ゴOld StdN W7.otf in Resources */,
 				C8D9ABAC1B958793002D90B6 /* pin_4.png in Resources */,
+				C8D148AF1BA9954400DCF2B6 /* Storyboard.storyboard in Resources */,
 				C8D9AB901B957EAD002D90B6 /* ヒラギノ角ゴOld StdN W8.otf in Resources */,
 				C8D9AB911B957EAD002D90B6 /* ヒラギノ角ゴOld StdN W9.otf in Resources */,
 				C8D46D411B93A8D90075D362 /* sinndo.png in Resources */,

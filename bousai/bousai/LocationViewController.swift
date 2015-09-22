@@ -35,14 +35,18 @@ class LocationViewController: UIViewController,  CLLocationManagerDelegate {
     func requetAuthorization() {
         let status = CLLocationManager.authorizationStatus()
         if(status == CLAuthorizationStatus.NotDetermined) {
-            self.locationManager.requestAlwaysAuthorization()
+            if #available(iOS 8.0, *) {
+                self.locationManager.requestAlwaysAuthorization()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
     // 位置情報のアクセス許可の状況が変わったときの処理
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
-        println("didChangeAuthorizationStatus");
+        print("didChangeAuthorizationStatus");
         var statusStr = "";
         switch (status) {
         case .NotDetermined:
@@ -61,7 +65,7 @@ class LocationViewController: UIViewController,  CLLocationManagerDelegate {
         case .AuthorizedWhenInUse:
             statusStr = "AuthorizedWhenInUse"
         }
-        println(" CLAuthorizationStatus: \(statusStr)")
+        print(" CLAuthorizationStatus: \(statusStr)")
     }
     
     func toSetHomeView(){

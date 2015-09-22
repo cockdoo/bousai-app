@@ -12,9 +12,9 @@ import CoreLocation
 class BousaiManagerObject: NSObject {
     
     func convertLatLonToTile(lat: CLLocationDegrees, lon: CLLocationDegrees, z: Double) -> NSArray {
-        var x:Int = Int((lon / 180 + 1) * pow(2, z) / 2)
-        var y:Int = Int(((-log(tan((45 + lat / 2) * M_PI / 180)) + M_PI) * pow(2, z) / (2 * M_PI)))
-        println("x:\(x) y:\(y)")
+        let x:Int = Int((lon / 180 + 1) * pow(2, z) / 2)
+        let y:Int = Int(((-log(tan((45 + lat / 2) * M_PI / 180)) + M_PI) * pow(2, z) / (2 * M_PI)))
+        print("x:\(x) y:\(y)")
         
         let xyArray = NSArray(array: [x, y])
         return xyArray
@@ -27,8 +27,8 @@ class BousaiManagerObject: NSObject {
         URL = NSURL(string: "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/hinanjo/16/58170/25888.geojson")
         let jsonData :NSData! = NSData(contentsOfURL: URL)
         
-        var json = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: nil) as? NSDictionary
-            println(json)
+        let json = (try? NSJSONSerialization.JSONObjectWithData(jsonData, options: [])) as? NSDictionary
+            print(json)
         
     }
     
@@ -38,9 +38,9 @@ class BousaiManagerObject: NSObject {
         let jsonData :NSData! = NSData(contentsOfURL: URL)
         
         let json = JSON(data: jsonData)
-        println(json)
+        print(json)
         if let title = json["features"][0]["type"].string {
-            println(title)
+            print(title)
         }
     }
     

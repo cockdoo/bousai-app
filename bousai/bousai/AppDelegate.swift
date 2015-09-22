@@ -35,34 +35,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //UserDefaultのデフォルト設定
         ud = NSUserDefaults.standardUserDefaults()
-        var dic = ["firstLaunch": true]
+        let dic = ["firstLaunch": true]
         ud.registerDefaults(dic)
         
-        var dic2 = ["chiriinMap": false]
+        let dic2 = ["chiriinMap": false]
         ud.registerDefaults(dic2)
         
-        var dic3 = ["nonData": true]
+        let dic3 = ["nonData": true]
         ud.registerDefaults(dic3)
         
         var isFirstLaunch: Bool
         
         //初回起動かどうかの判定
         if ud.boolForKey("firstLaunch") {
-            println("初回起動")
+            print("初回起動")
             isFirstLaunch = true
             ud.setBool(false, forKey: "firstLaunch")
         }else {
             isFirstLaunch = false
         }
         
-        var storyboard:UIStoryboard =  UIStoryboard(name: "Main",bundle:nil)
+        let storyboard:UIStoryboard =  UIStoryboard(name: "Main",bundle:nil)
         var viewController:UIViewController
         
         //表示するビューを指定
         if isFirstLaunch {
-            viewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") as! UIViewController
+            viewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") 
         } else {
-            viewController = storyboard.instantiateViewControllerWithIdentifier("TopView") as! UIViewController
+            viewController = storyboard.instantiateViewControllerWithIdentifier("TopView") 
         }
         
         window?.rootViewController = viewController
@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
-        println("background fetch!")
+        print("background fetch!")
         if (lManager != nil) {
             lManager.settingLocationManager()
             lManager.locationManager.startUpdatingLocation()

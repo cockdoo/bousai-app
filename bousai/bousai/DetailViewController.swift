@@ -31,7 +31,7 @@ class DetailViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setStreetView() {
-        var panoView = GMSPanoramaView(frame: CGRectMake(0, 98, 320, 470))
+        let panoView = GMSPanoramaView(frame: CGRectMake(0, 98, 320, 470))
         panoView.moveNearCoordinate(CLLocationCoordinate2DMake(selectedLat, selectedLon), radius: 300)
         self.view.addSubview(panoView)
     }

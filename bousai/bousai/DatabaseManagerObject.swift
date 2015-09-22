@@ -35,14 +35,14 @@ class DatabaseManagerObject: NSObject {
         db.close()
         
         if ret3 {
-            println("テーブルの作成に成功")
+            print("テーブルの作成に成功")
         }
     }
     
     func insertLocationData(lat: Double, lon: Double) {
-        println(lat)
+        print(lat)
         db.open()
-        var sql = "INSERT INTO location (lat, lon) VALUES (?, ?);"
+        let sql = "INSERT INTO location (lat, lon) VALUES (?, ?);"
         db.executeUpdate(sql, withArgumentsInArray: [lat, lon])
 //        db.executeUpdate(sql, withArgumentsInArray: [36.342141, 132.875689])
         db.close()
@@ -50,7 +50,7 @@ class DatabaseManagerObject: NSObject {
     
     func showLocationData(){
         db.open()
-        var sql = "SELECT id, lat, lon FROM location ORDER BY id;"
+        let sql = "SELECT id, lat, lon FROM location ORDER BY id;"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
         while results.next() {
@@ -58,7 +58,7 @@ class DatabaseManagerObject: NSObject {
             let lat = results.doubleForColumn("lat")
             let lon = results.doubleForColumn("lon")
             // print data
-            println("lat:\(lat) lon:\(lon)")
+            print("lat:\(lat) lon:\(lon)")
             
 //            lManager.revGeocoding(lat, lon: lon)
         }
@@ -67,7 +67,7 @@ class DatabaseManagerObject: NSObject {
     
     func getLocationData() {
         db.open()
-        var sql = "SELECT id, lat, lon FROM location ORDER BY id;"
+        let sql = "SELECT id, lat, lon FROM location ORDER BY id;"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
         while results.next() {
@@ -75,7 +75,7 @@ class DatabaseManagerObject: NSObject {
             let lat = results.doubleForColumn("lat")
             let lon = results.doubleForColumn("lon")
             // print data
-            println("lat:\(lat) lon:\(lon)")
+            print("lat:\(lat) lon:\(lon)")
             
             lManager.revGeocoding(lat, lon: lon)
         }
@@ -84,14 +84,14 @@ class DatabaseManagerObject: NSObject {
     
     func insertToLivingAreaTable(lat: Double, lon:Double, locality: String, sublocality: String) {
         db.open()
-        var sql = "INSERT INTO livingarea (lat, lon, place) VALUES (?, ?, ?);"
+        let sql = "INSERT INTO livingarea (lat, lon, place) VALUES (?, ?, ?);"
         db.executeUpdate(sql, withArgumentsInArray: [lat, lon, locality + "-" + sublocality])
         db.close()
     }
     
     func getDataCount(tableName: String) {
         db.open()
-        var sql = "SELECT COUNT(*) as count FROM \(tableName);"
+        let sql = "SELECT COUNT(*) as count FROM \(tableName);"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
         while results.next() {
@@ -105,16 +105,16 @@ class DatabaseManagerObject: NSObject {
     
     func getDistinctPlaceList() {
         db.open()
-        var sql = "SELECT DISTINCT place FROM livingarea;"
+        let sql = "SELECT DISTINCT place FROM livingarea;"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
-        var sql3 = "DELETE FROM distinctArea;"
+        let sql3 = "DELETE FROM distinctArea;"
         let results3 = db.executeUpdate(sql3, withArgumentsInArray: nil)
         
         while results.next() {
             let placeName = results.stringForColumn("place")
             
-            var sql2 = "SELECT COUNT(place) as count FROM livingarea WHERE place = '\(placeName)';"
+            let sql2 = "SELECT COUNT(place) as count FROM livingarea WHERE place = '\(placeName)';"
             let results2 = db.executeQuery(sql2, withArgumentsInArray: nil)
             
             var count: Int!
@@ -122,9 +122,9 @@ class DatabaseManagerObject: NSObject {
                 count = Int(results2.intForColumn("count"))
             }
             
-            println("\(placeName) : \(count)回")
+            print("\(placeName) : \(count)回")
             
-            var sql4 = "SELECT lat, lon FROM livingarea WHERE place = '\(placeName)'"
+            let sql4 = "SELECT lat, lon FROM livingarea WHERE place = '\(placeName)'"
             let results4 = db.executeQuery(sql4, withArgumentsInArray: nil)
             var lat, lon: Double!
             while results4.next() {
@@ -132,9 +132,9 @@ class DatabaseManagerObject: NSObject {
                 lon = results4.doubleForColumn("lon")
             }
             
-            println("\(placeName) \(lat) \(lon)")
+            print("\(placeName) \(lat) \(lon)")
             
-            var sql5 = "INSERT INTO distinctArea (lat, lon, place, times) VALUES (?, ?, ?, ?);"
+            let sql5 = "INSERT INTO distinctArea (lat, lon, place, times) VALUES (?, ?, ?, ?);"
             db.executeUpdate(sql5, withArgumentsInArray: [lat, lon, placeName, count])
         }
         db.close()
@@ -142,7 +142,7 @@ class DatabaseManagerObject: NSObject {
     
     func getDistinctArea() -> Array<Any> {
         db.open()
-        var sql = "SELECT lat, lon, place FROM distinctArea ORDER BY times desc;"
+        let sql = "SELECT lat, lon, place FROM distinctArea ORDER BY times desc;"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
         var array: [Any] = []
@@ -151,9 +151,9 @@ class DatabaseManagerObject: NSObject {
             let lon: Double = results.doubleForColumn("lon")
             let place: String = results.stringForColumn("place")
             
-            println("\(place) \(lat) \(lon)!!!!!!!!!!")
+            print("\(place) \(lat) \(lon)!!!!!!!!!!")
             
-            var areaArray: NSArray = [lat, lon, place]
+            let areaArray: NSArray = [lat, lon, place]
             array.append(areaArray)
         }
         
@@ -164,13 +164,13 @@ class DatabaseManagerObject: NSObject {
     
     func showPlaceList() {
         db.open()
-        var sql = "SELECT place FROM livingarea ORDER BY id;"
+        let sql = "SELECT place FROM livingarea ORDER BY id;"
         let results = db.executeQuery(sql, withArgumentsInArray: nil)
         
         while results.next() {
             let id = results.stringForColumn("place")
             // print data
-            println("place:\(id)")
+            print("place:\(id)")
         }
         
         db.close()
@@ -178,26 +178,26 @@ class DatabaseManagerObject: NSObject {
     
     func showTableList() {
         db.open()
-        var sql = "SELECT * FROM sqlite_master;"
+        let sql = "SELECT * FROM sqlite_master;"
         let ret = db.executeQuery(sql, withArgumentsInArray: nil)
         while ret.next() {
             let id = ret.stringForColumn("name")
             // print data
-            println("place:\(id)")
+            print("place:\(id)")
         }
         db.close()
     }
     
     func deleteTable(tableName: String) {
         db.open()
-        var sql = "DROP TABLE livingarea;"
+        let sql = "DROP TABLE livingarea;"
         let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
         db.close()
     }
     
     func truncateTable(tableName: String) {
         db.open()
-        var sql = "DELETE FROM \(tableName);"
+        let sql = "DELETE FROM \(tableName);"
         let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
         db.close()
     }
@@ -222,7 +222,7 @@ class DatabaseManagerObject: NSObject {
             let user_id = results.intForColumn("user_id")
             let user_name = results.stringForColumnIndex(1)
             // print data
-            println("user_id = \(user_id), user_name = \(user_name)")
+            print("user_id = \(user_id), user_name = \(user_name)")
         }
         
         // database close
@@ -250,7 +250,7 @@ class DatabaseManagerObject: NSObject {
         db.close()
         
         if ret {
-            println("テーブルの作成に成功")
+            print("テーブルの作成に成功")
         }
     }
 }

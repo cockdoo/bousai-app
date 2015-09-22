@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
         
         initializeMap()
         
-        println(selectedName)
+        print(selectedName)
         titleName.text = selectedName
         
         setShelter()
@@ -44,14 +44,14 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        println("画面表示")
+        print("画面表示")
         setChiriinMap()
     }
     
     func initializeMap() {
         mapView = MapViewObject()
         mapView.initializeSetting()
-        println(selectedLon)
+        print(selectedLon)
         mapView.moveTo(selectedLat, lon: selectedLon, zoom: 14)
         self.view.addSubview(mapView)
     }
@@ -59,9 +59,9 @@ class MainViewController: UIViewController {
     func setChiriinMap() {
         if (ud.boolForKey("chiriinMap") == true) {
             mapView.setOverLay()
-            println("地理院地図表示")
+            print("地理院地図表示")
         }else {
-            println("地理院地図表示しない")
+            print("地理院地図表示しない")
 //            mapView.clear()
         }
     }
@@ -89,7 +89,7 @@ class MainViewController: UIViewController {
     
     func setListBg() {
         for var i = 0; i < 4; i++ {
-            var listBg = UIView()
+            let listBg = UIView()
             let originY = CGFloat(12 + 42 * i)
             listBg.frame = CGRectMake(10.0, originY, 300.0, 34.0)
             listBg.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
@@ -107,7 +107,7 @@ class MainViewController: UIViewController {
         var URL:NSURL!
         URL = NSURL(string: "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/hinanjo/\(Int(zoom))/\(xyArray[0])/\(xyArray[1]).geojson")
         
-        println(URL)
+        print(URL)
         
         var distanceDictionary: Dictionary = ["none": "none"]
         distanceDictionary.removeValueForKey("none")
@@ -116,10 +116,10 @@ class MainViewController: UIViewController {
         if (jsonData != nil) {
             let json = JSON(data: jsonData)
             
-            println(json["features"])
+            print(json["features"])
             
             //取得データの数だけマーカーを設置
-            for (index: String, subJson: JSON) in json["features"] {
+            for (index, subJson): (String, JSON) in json["features"] {
                 var coordinates = subJson["geometry"]["coordinates"]
                 var lat = coordinates[1].doubleValue
                 var lon = coordinates[0].doubleValue
@@ -135,26 +135,26 @@ class MainViewController: UIViewController {
             
             var keys: [Int] = [99999999]
             for (key, val) in distanceDictionary {
-                keys.append(key.toInt()!)
+                keys.append(Int(key)!)
             }
             
             //距離の近い順に並び替え
-            keys.sort { $0 < $1 }
-            println(keys)
+            keys.sortInPlace { $0 < $1 }
+            print(keys)
             
             var num = 0
             for sortKey in keys {
                 for (key, value) in distanceDictionary {
-                    if sortKey == key.toInt() {
-                        println("keyは\(key) valueは\(value)")
+                    if sortKey == Int(key) {
+                        print("keyは\(key) valueは\(value)")
                         
-                        var coordinates = json["features"][value.toInt()!]["geometry"]["coordinates"]
+                        var coordinates = json["features"][Int(value)!]["geometry"]["coordinates"]
                         var lat = coordinates[1].doubleValue
                         var lon = coordinates[0].doubleValue
-                        var name: String! = json["features"][value.toInt()!]["properties"]["name"].string
-                        var address: String! = json["features"][value.toInt()!]["properties"]["address"].string
+                        var name: String! = json["features"][Int(value)!]["properties"]["name"].string
+                        var address: String! = json["features"][Int(value)!]["properties"]["address"].string
                         
-                        println("\(name)")
+                        print("\(name)")
                         
                         if (num < 4) {
                             shelterArray.addObject([lat, lon, name, address])
@@ -170,15 +170,15 @@ class MainViewController: UIViewController {
     }
     
     func setMarker(lat:Double, lon:Double, name: String) {
-        var position = CLLocationCoordinate2DMake(lat, lon)
-        var marker = GMSMarker(position: position)
+        let position = CLLocationCoordinate2DMake(lat, lon)
+        let marker = GMSMarker(position: position)
         marker.title = name
         
-        var img: UIImage! = UIImage(named: "pin.png")
+        let img: UIImage! = UIImage(named: "pin.png")
         let size = CGSize(width: 22, height: 30)
         UIGraphicsBeginImageContext(size)
         img.drawInRect(CGRectMake(0, 0, size.width, size.height))
-        var resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+        let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         marker.icon = resizeImage
@@ -187,19 +187,19 @@ class MainViewController: UIViewController {
     
     func setNumberMarker() {
         for var i = 0; i < shelterArray.count; i++ {
-            var array: NSArray! = shelterArray[i] as! NSArray
+            let array: NSArray! = shelterArray[i] as! NSArray
             
-            var position = CLLocationCoordinate2DMake(array[0] as! CLLocationDegrees, array[1] as! CLLocationDegrees)
-            var marker = GMSMarker(position: position)
+            let position = CLLocationCoordinate2DMake(array[0] as! CLLocationDegrees, array[1] as! CLLocationDegrees)
+            let marker = GMSMarker(position: position)
             marker.title = array[2] as! String
             marker.map = mapView
             marker.zIndex = 100-i
             
-            var img: UIImage! = UIImage(named: "pin_\(i+1).png")
+            let img: UIImage! = UIImage(named: "pin_\(i+1).png")
             let size = CGSize(width: 22, height: 30)
             UIGraphicsBeginImageContext(size)
             img.drawInRect(CGRectMake(0, 0, size.width, size.height))
-            var resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+            let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
             marker.icon = resizeImage
@@ -207,9 +207,9 @@ class MainViewController: UIViewController {
     }
     
     func setShelterList(lat: Double, lon: Double, name: String, index: Int) {
-        var listBtn = UIButton()
+        let listBtn = UIButton()
         let originY = CGFloat(12 + 42 * index)
-        println(originY)
+        print(originY)
         listBtn.frame = CGRectMake(10.0, originY, 300.0, 34.0)
         listBtn.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         listBtn.addTarget(self, action: Selector("toDetailView:"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -217,15 +217,15 @@ class MainViewController: UIViewController {
         
         shelterView.addSubview(listBtn)
         
-        var label = UILabel(frame: CGRectMake(10, 0, 264, 34))
+        let label = UILabel(frame: CGRectMake(10, 0, 264, 34))
         label.textAlignment = NSTextAlignment.Left
         label.text = "\(index + 1)　\(name)"
         label.font = UIFont(name: "Hiragino Kaku Gothic ProN", size: 14)
         label.font = UIFont.boldSystemFontOfSize(14)
         label.adjustsFontSizeToFitWidth = true
         
-        var img = UIImage(named: "syousai.png")
-        var imageView = UIImageView(image: img)
+        let img = UIImage(named: "syousai.png")
+        let imageView = UIImageView(image: img)
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.frame = CGRectMake(274, 8, 18, 18)
         
@@ -235,9 +235,9 @@ class MainViewController: UIViewController {
     }
     
     func toDetailView(sender: UIButton) {
-        var tag = sender.tag
+        let tag = sender.tag
         
-        var array: NSArray = shelterArray[tag] as! NSArray
+        let array: NSArray = shelterArray[tag] as! NSArray
         selectedLat = array[0] as! CLLocationDegrees
         selectedLon = array[1] as! CLLocationDegrees
         selectedName = array[2] as! String
@@ -268,7 +268,7 @@ class MainViewController: UIViewController {
         URL = NSURL(string: "http://disaportal2.gsi.go.jp/hazardmap/bousaiapp/h27/api1.php?lon=\(selectedLon)&lat=\(selectedLat)&kind=shindo")
         
         let data: NSData! = NSData(contentsOfURL: URL)
-        var string: String! = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        let string: String! = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
         
         if (string != nil) {
             earthquakeDegree.text = string
@@ -276,17 +276,17 @@ class MainViewController: UIViewController {
     }
     
     func setBigMap() {
-        var bigMap = GMSMapView(frame: CGRectMake(140, 27+11, 160, 135))
+        let bigMap = GMSMapView(frame: CGRectMake(140, 27+11, 160, 135))
         bigMap.camera = GMSCameraPosition.cameraWithLatitude(selectedLat, longitude: selectedLon, zoom: 10)
         bigMap.settings.scrollGestures = false
         bigMap.settings.zoomGestures = false
         bigMap.settings.tiltGestures = false
         
-        var urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
-            var url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/shindo_r/\(zoom)/\(x)/\(y).png"
+        let urls = { (x: UInt, y: UInt, zoom: UInt) -> NSURL in
+            let url = "http://cyberjapandata.gsi.go.jp/xyz/bousai_app/h27/shindo_r/\(zoom)/\(x)/\(y).png"
             return NSURL(string: url)!
         }
-        var layer = GMSURLTileLayer(URLConstructor: urls)
+        let layer = GMSURLTileLayer(URLConstructor: urls)
         layer.map = bigMap
         earthquakeView.addSubview(bigMap)
     }
@@ -311,7 +311,7 @@ class MainViewController: UIViewController {
         URL = NSURL(string: "http://disaportal2.gsi.go.jp/hazardmap/bousaiapp/h27/api1.php?lon=\(selectedLon)&lat=\(selectedLat)&kind=tsunami1")
         
         let data: NSData! = NSData(contentsOfURL: URL)
-        var string: String! = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        let string: String! = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
 
         if (string != "") {
             tsunamiDeep.text = string
@@ -333,9 +333,9 @@ class MainViewController: UIViewController {
         if (jsonData != nil) {
             let json = JSON(data: jsonData)
             
-            for (index: String, subJson: JSON) in json["features"] {
+            for (index, subJson): (String, JSON) in json["features"] {
                 var type = subJson["properties"]["type"]
-                println(subJson)
+                print(subJson)
                 
                 if (type == "南関東地震") {
                     tsunamiHeight.text = subJson["properties"]["height"].string

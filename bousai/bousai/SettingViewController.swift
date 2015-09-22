@@ -25,11 +25,11 @@ class SettingViewController: UIViewController {
     func switchChanged(sender: UISwitch) {
         
         if sender.on {
-            println("on")
+            print("on")
             ud.setBool(true, forKey: "chiriinMap")
         }
         else {
-            println("off")
+            print("off")
             ud.setBool(false, forKey: "chiriinMap")
         }
         ud.synchronize()

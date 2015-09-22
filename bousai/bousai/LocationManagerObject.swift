@@ -31,14 +31,18 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     func requetAuthorization() {
         let status = CLLocationManager.authorizationStatus()
         if(status == CLAuthorizationStatus.NotDetermined) {
-            self.locationManager.requestAlwaysAuthorization()
+            if #available(iOS 8.0, *) {
+                self.locationManager.requestAlwaysAuthorization()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
     // 位置情報のアクセス許可の状況が変わったときの処理
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
-        println("didChangeAuthorizationStatus");
+        print("didChangeAuthorizationStatus");
         var statusStr = "";
         switch (status) {
         case .NotDetermined:
@@ -55,20 +59,20 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
             statusStr = "AuthorizedWhenInUse"
 //            locationManager.startUpdatingLocation()
         }
-        println(" CLAuthorizationStatus: \(statusStr)")
+        print(" CLAuthorizationStatus: \(statusStr)")
     }
     
     // 位置情報が取得できたときの処理
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.count > 0{
-            currentLocation = locations.last as? CLLocation
-            println("緯度:\(currentLocation?.coordinate.latitude) 経度:\(currentLocation?.coordinate.longitude)")
+            currentLocation = (locations.last as? CLLocation?)!
+            print("緯度:\(currentLocation?.coordinate.latitude) 経度:\(currentLocation?.coordinate.longitude)")
             
             lat = currentLocation?.coordinate.latitude
             lon = currentLocation?.coordinate.longitude
             
             if (ud.boolForKey("nonData") == true)  {
-                println("初回だけすぐにデータを挿入")
+                print("初回だけすぐにデータを挿入")
                 dbManager.insertLocationData(lat, lon: lon)
                 
                 ud.setBool(false, forKey: "nonData")
@@ -78,8 +82,8 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     }
     
     // 位置情報取得に失敗した時に呼び出されるデリゲート.
-    func locationManager(manager: CLLocationManager!,didFailWithError error: NSError!){
-        print("locationManager error")
+    func locationManager(manager: CLLocationManager,didFailWithError error: NSError){
+        print("locationManager error", terminator: "")
         
         locationManager.startUpdatingLocation()
     }
@@ -96,8 +100,8 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
 //                println("Postal Code = \(placemark.postalCode)")
 //                println("Administrative Area = \(placemark.administrativeArea)")
 //                println("Sub Administrative Area = \(placemark.subAdministrativeArea)")
-                println("Locality = \(placemark.locality)")
-                println("Sub Locality = \(placemark.subLocality)")
+                print("Locality = \(placemark.locality)")
+                print("Sub Locality = \(placemark.subLocality)")
 //                println("Throughfare = \(placemark.thoroughfare)")
                 
                 if (placemark.locality != nil && placemark.subLocality != nil) {
@@ -105,32 +109,32 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
                 }
                 
                 self.count = self.count + 1
-                println(self.count)
+                print(self.count)
                 
                 if (self.count == locationTableRows) {
-                    println("全データ挿入完了！")
+                    print("全データ挿入完了！")
                     self.count = 0
                     dbManager.getDistinctPlaceList()
                 }
                 
             } else if (error == nil && placemarks.count == 0) {
-                println("No results were returned.")
+                print("No results were returned.")
             } else if (error != nil) {
-                println("An error occured = \(error.localizedDescription)")
+                print("An error occured = \(error.localizedDescription)")
             }
         })
     }
     
     func getStreetViewURL(lat: CLLocationDegrees, lon: CLLocationDegrees, width: Int, height: Int) -> UIImage {
-        var apiKey = "AIzaSyCslSIWQG0dnhS8BaeCIQyUxttCliecBdA"
-        var heading = arc4random_uniform(360)
-        var urlString = "http://maps.googleapis.com/maps/api/streetview?size=\(width*2)x\(height*2)&location=\(lat),\(lon)&heading=\(heading)&pitch=-0.76&sensor=true&fov=90&key=\(apiKey)"
+        let apiKey = "AIzaSyCslSIWQG0dnhS8BaeCIQyUxttCliecBdA"
+        let heading = arc4random_uniform(360)
+        let urlString = "http://maps.googleapis.com/maps/api/streetview?size=\(width*2)x\(height*2)&location=\(lat),\(lon)&heading=\(heading)&pitch=-0.76&sensor=true&fov=90&key=\(apiKey)"
         
         let url = NSURL(string: urlString)
         var err: NSError?
-        var imageData :NSData = NSData(contentsOfURL: url!,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)!;
+        let imageData :NSData = try! NSData(contentsOfURL: url!,options: NSDataReadingOptions.DataReadingMappedIfSafe);
         
-        var img: UIImage! = UIImage(data: imageData)
+        let img: UIImage! = UIImage(data: imageData)
         
         return img
     }
