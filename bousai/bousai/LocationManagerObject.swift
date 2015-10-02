@@ -93,21 +93,26 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     func revGeocoding(lat: Double, lon: Double) {
         let location = CLLocation(latitude: lat, longitude: lon)
         var geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks:[AnyObject]!, error:NSError!) -> Void in
-            if (error == nil && placemarks.count > 0) {
-                let placemark: CLPlacemark! = placemarks[0] as? CLPlacemark
+//        geocoder.reverseGeocodeLocation(location, completionHandler: CLGeocodeCompletionHandler)
+        
+        /*geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks:[AnyObject], error:NSError!) -> Void  in
+            if (error == nil && placemarks.count > 0) { */
+                
+                /*let placemark: CLPlacemark! = placemarks[0] as? CLPlacemark*/
 //                println("Country = \(placemark.country)")
 //                println("Postal Code = \(placemark.postalCode)")
 //                println("Administrative Area = \(placemark.administrativeArea)")
 //                println("Sub Administrative Area = \(placemark.subAdministrativeArea)")
-                print("Locality = \(placemark.locality)")
-                print("Sub Locality = \(placemark.subLocality)")
+                /*print("Locality = \(placemark.locality)")*/
+                /*print("Sub Locality = \(placemark.subLocality)")*/
 //                println("Throughfare = \(placemark.thoroughfare)")
-                
-                if (placemark.locality != nil && placemark.subLocality != nil) {
-                    dbManager.insertToLivingAreaTable(lat, lon: lon, locality: placemark.locality, sublocality: placemark.subLocality)
-                }
-                
+        
+        let locality: String = "テスト"
+        let subLocality: String = "てすと"
+//                if (placemark.locality != nil && placemark.subLocality != nil) {
+                    dbManager.insertToLivingAreaTable(lat, lon: lon, locality: locality, sublocality: subLocality)
+//                }
+        
                 self.count = self.count + 1
                 print(self.count)
                 
@@ -117,12 +122,12 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
                     dbManager.getDistinctPlaceList()
                 }
                 
-            } else if (error == nil && placemarks.count == 0) {
+            /*} else if (error == nil && placemarks.count == 0) {
                 print("No results were returned.")
             } else if (error != nil) {
                 print("An error occured = \(error.localizedDescription)")
             }
-        })
+        })*/
     }
     
     func getStreetViewURL(lat: CLLocationDegrees, lon: CLLocationDegrees, width: Int, height: Int) -> UIImage {

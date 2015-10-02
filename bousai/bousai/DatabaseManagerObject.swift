@@ -16,7 +16,12 @@ class DatabaseManagerObject: NSObject {
         let paths = NSSearchPathForDirectoriesInDomains( .DocumentDirectory, .UserDomainMask, true)
         
         // generate to /Documents/swift2objectc.db
-        let _path = paths[0].stringByAppendingPathComponent("swift2objectc.db")
+//        let _path = paths[0].stringByAppendingPathComponent("swift2objectc.db")
+        
+//        let path:String = path[0]
+        let _path: String = paths[0]+"/swift2objectc.db"
+        print("ぬあああああああああああああああああああああ")
+        print(_path)
         
         // make instance of FMDatabase
         db = FMDatabase(path: _path)
@@ -229,28 +234,28 @@ class DatabaseManagerObject: NSObject {
         db.close()
     }
     
-    func sample2() {
-        // /Documentsまでのパスを取得
-        let paths = NSSearchPathForDirectoriesInDomains(
-            .DocumentDirectory,
-            .UserDomainMask, true)
-        // <Application>/Documents/sample.db というパスを生成
-        let _path = paths[0].stringByAppendingPathComponent("sample.db")
-        
-        // FMDatabaseクラスのインスタンスを作成
-        // 引数にファイルまでのパスを渡す
-        let db = FMDatabase(path: _path)
-        let sql = "CREATE TABLE IF NOT EXISTS sample (user_id INTEGER PRIMARY KEY, user_name TEXT);"
-        
-        // データベースをオープン
-        db.open()
-        // SQL文を実行
-        let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
-        // データベースをクローズ
-        db.close()
-        
-        if ret {
-            print("テーブルの作成に成功")
-        }
-    }
+//    func sample2() {
+//        // /Documentsまでのパスを取得
+//        let paths = NSSearchPathForDirectoriesInDomains(
+//            .DocumentDirectory,
+//            .UserDomainMask, true)
+//        // <Application>/Documents/sample.db というパスを生成
+//        let _path = paths[0].stringByAppendingPathComponent("sample.db")
+//        
+//        // FMDatabaseクラスのインスタンスを作成
+//        // 引数にファイルまでのパスを渡す
+//        let db = FMDatabase(path: _path)
+//        let sql = "CREATE TABLE IF NOT EXISTS sample (user_id INTEGER PRIMARY KEY, user_name TEXT);"
+//        
+//        // データベースをオープン
+//        db.open()
+//        // SQL文を実行
+//        let ret = db.executeUpdate(sql, withArgumentsInArray: nil)
+//        // データベースをクローズ
+//        db.close()
+//        
+//        if ret {
+//            print("テーブルの作成に成功")
+//        }
+//    }
 }
