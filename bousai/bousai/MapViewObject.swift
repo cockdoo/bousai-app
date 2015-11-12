@@ -11,13 +11,14 @@ import GoogleMaps
 
 class MapViewObject: GMSMapView, GMSMapViewDelegate {
     
+    let sizeRate: CGFloat = 1.17
     func initializeSetting() {
         self.myLocationEnabled = true
         self.settings.myLocationButton = true
         self.settings.compassButton = true
         self.delegate = self
         
-        self.frame = CGRectMake(0, 64, 320, 270)
+        self.frame = CGRectMake(0, 63 * sizeRate, 320 * sizeRate, 270 * sizeRate)
     }
     
     func moveTo(lat: CLLocationDegrees, lon: CLLocationDegrees, zoom:Float) {

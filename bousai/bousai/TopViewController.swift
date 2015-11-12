@@ -15,17 +15,21 @@ class TopViewController: UIViewController {
     var currentBtnTimer: NSTimer!
     var areaArrays: Array<Any>!
     
+    var sizeRate: CGFloat = 1.17
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        
         initializeLocationManager()
-        initializeDatabaseManager()
+        /*initializeDatabaseManager()*/
         initializeBousaiManager()
+
         
-        setLivingArea()
+        /*setLivingArea()*/
         
-        overView = UIView(frame: CGRectMake(0, 64, 320, 568-64))
+        overView = UIView(frame: CGRectMake(0, 64 * sizeRate, 320 * sizeRate, (568-64) * sizeRate))
         self.view.addSubview(overView)
         
         setAreaBtnsBg()
@@ -35,7 +39,7 @@ class TopViewController: UIViewController {
     @IBAction func refreshBtnTouched(sender: AnyObject) {
         overView.removeFromSuperview()
         
-        overView = UIView(frame: CGRectMake(0, 64, 320, 568-64))
+        overView = UIView(frame: CGRectMake(0, 64 * sizeRate, 320 * sizeRate, (568-64) * sizeRate))
         self.view.addSubview(overView)
         
         setLivingArea()
@@ -104,7 +108,7 @@ class TopViewController: UIViewController {
     }
     
     func setAreaBtnsBg() {
-        let currentBtnBg = UIView(frame: CGRectMake(10, 10, 300, 154))
+        let currentBtnBg = UIView(frame: CGRectMake(10 * sizeRate, 10 * sizeRate, 300 * sizeRate, 154 * sizeRate))
         currentBtnBg.layer.cornerRadius = 10
         currentBtnBg.layer.borderColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.4).CGColor
         currentBtnBg.layer.borderWidth = 2;
@@ -114,13 +118,13 @@ class TopViewController: UIViewController {
             var rect: CGRect!
             switch i {
             case 0:
-                rect = CGRectMake(10, 568-64-20-310, 145, 155)
+                rect = CGRectMake(10 * sizeRate, (568-64-20-310) * sizeRate, 145 * sizeRate, 155 * sizeRate)
             case 1:
-                rect = CGRectMake(10+145+10, 568-64-20-310, 145, 155)
+                rect = CGRectMake((10+145+10) * sizeRate, (568-64-20-310) * sizeRate, 145 * sizeRate, 155 * sizeRate)
             case 2:
-                rect = CGRectMake(10, 568-64-10-155, 145, 155)
+                rect = CGRectMake(10 * sizeRate, (568-64-10-155) * sizeRate, 145 * sizeRate, 155 * sizeRate)
             case 3:
-                rect = CGRectMake(10+145+10, 568-64-10-155, 145, 155)
+                rect = CGRectMake((10+145+10) * sizeRate, (568-64-10-155) * sizeRate, 145 * sizeRate, 155 * sizeRate)
             default:
                 break
             }
@@ -137,20 +141,27 @@ class TopViewController: UIViewController {
         
         currentBtnTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("setCurrentView"), userInfo: nil, repeats: true)
         
-        areaArrays =  dbManager.getDistinctArea()
+//        areaArrays =  dbManager.getDistinctArea()
+        
+        let area0:Array = [35.317931,139.499904,"鎌倉市-大船"] //自宅
+        let area1:Array = [35.353113,139.538310,"鎌倉市-津西"] //勤務地
+        let area2:Array = [35.318271,139.514939,"鎌倉市-鎌倉山"] //よく行くカフェ
+        let area3:Array = [35.318734,139.552864,"鎌倉市-小町"] //スポーツクラブ
+        
+        areaArrays = [area0, area1, area2,area3]
 
         for var i = 0; i < areaArrays.count; i++ {
             var rect: CGRect!
             switch i {
-                case 0:
-                    rect = CGRectMake(10, 568-64-20-310, 145, 155)
-                case 1:
-                    rect = CGRectMake(10+145+10, 568-64-20-310, 145, 155)
-                case 2:
-                    rect = CGRectMake(10, 568-64-10-155, 145, 155)
-                case 3:
-                    rect = CGRectMake(10+145+10, 568-64-10-155, 145, 155)
-                default:
+            case 0:
+                rect = CGRectMake(10 * sizeRate, (568-64-20-310) * sizeRate, 145 * sizeRate, 155 * sizeRate)
+            case 1:
+                rect = CGRectMake((10+145+10) * sizeRate, (568-64-20-310) * sizeRate, 145 * sizeRate, 155 * sizeRate)
+            case 2:
+                rect = CGRectMake(10 * sizeRate, (568-64-10-155) * sizeRate, 145 * sizeRate, 155 * sizeRate)
+            case 3:
+                rect = CGRectMake((10+145+10) * sizeRate, (568-64-10-155) * sizeRate, 145 * sizeRate, 155 * sizeRate)
+            default:
                 break
             }
             
@@ -176,7 +187,7 @@ class TopViewController: UIViewController {
                 bgView.layer.shadowOpacity = 0.3
                 bgView.layer.masksToBounds = false
                 
-                let label = UILabel(frame: CGRectMake(0, 127, 135, 28))
+                let label = UILabel(frame: CGRectMake(0, 127 * sizeRate, 135 * sizeRate, 28 * sizeRate))
                 label.text = place.componentsSeparatedByString("-")[1]
                 label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
                 label.textAlignment = NSTextAlignment.Right
@@ -186,26 +197,33 @@ class TopViewController: UIViewController {
                 overView.addSubview(areaBtn)
                 areaBtn.addSubview(label)
                 
-                let img = lManager.getStreetViewURL(lat, lon: lon, width: 145, height: 127)
+                
+                let img = lManager.getStreetViewURL(lat, lon: lon, width: 169, height: 148)
                 
                 let imageView = UIImageView(image: img)
-                imageView.frame = CGRectMake(0, 0, 145, 127)
+                imageView.frame = CGRectMake(0, 0, 145 * sizeRate, 127 * sizeRate)
                 areaBtn.addSubview(imageView)
+                
+                let imgName:String! = "\(i + 1)_1.png"
+                let numberImg = UIImage(named: imgName)
+                let numberImgView = UIImageView(image: numberImg)
+                numberImgView.frame = CGRectMake(0, 0, 45 * sizeRate, 45 * sizeRate)
+                areaBtn.addSubview(numberImgView)
             }
         }
     }
     
     func setCurrentView(){
-        if (lManager.lat != 0 && lManager.lon != 0) {
+//        if (lManager.lat != 0 && lManager.lon != 0) {
 
             //現在地ボタンの作成
-            let currentBtn = UIButton(frame: CGRectMake(10, 10, 300, 154))
+            let currentBtn = UIButton(frame: CGRectMake(10 * sizeRate, 10 * sizeRate, 300 * sizeRate, 154 * sizeRate))
             currentBtn.backgroundColor = UIColor(red: 56/256, green: 204/255, blue: 182/255, alpha: 1)
             currentBtn.layer.cornerRadius = 10
             currentBtn.clipsToBounds = true
             currentBtn.addTarget(self, action: Selector("currentLocationButtonTapped"), forControlEvents: UIControlEvents.TouchUpInside)
             
-            let bgView = UIView(frame: CGRectMake(10, 10, 300, 154))
+            let bgView = UIView(frame: CGRectMake(10 * sizeRate, 10 * sizeRate, 300 * sizeRate, 154 * sizeRate))
             bgView.layer.cornerRadius = 10
             bgView.backgroundColor = UIColor(red: 56/256, green: 204/255, blue: 182/255, alpha: 1)
             bgView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).CGColor
@@ -214,7 +232,7 @@ class TopViewController: UIViewController {
             bgView.layer.shadowOpacity = 0.3
             bgView.layer.masksToBounds = false
             
-            let label = UILabel(frame: CGRectMake(0, 127, 290, 28))
+            let label = UILabel(frame: CGRectMake(0, 127 * sizeRate, 290 * sizeRate, 28 * sizeRate))
             label.text = "現在地"
             label.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
             label.textAlignment = NSTextAlignment.Right
@@ -223,23 +241,24 @@ class TopViewController: UIViewController {
             let pinImg = UIImage(named: "pin_top.png")
             let pinImageView = UIImageView(image: pinImg)
             pinImageView.contentMode = UIViewContentMode.ScaleAspectFit
-            pinImageView.frame = CGRectMake(214, 131, 20, 20)
+            pinImageView.frame = CGRectMake(214 * sizeRate, 131 * sizeRate, 20 * sizeRate, 20 * sizeRate)
             
             overView.addSubview(bgView)
             overView.addSubview(currentBtn)
             currentBtn.addSubview(label)
             currentBtn.addSubview(pinImageView)
             
-            let img = lManager.getStreetViewURL(lManager.lat, lon: lManager.lon, width: 300, height: 126)
+//            let img = lManager.getStreetViewURL(lManager.lat, lon: lManager.lon, width: 300, height: 126)
+            let img = UIImage(named: "streetview00.jpg")
             let imageView = UIImageView(image: img)
-            imageView.frame = CGRectMake(0, 0, 300, 126)
+            imageView.frame = CGRectMake(0, 0, 300 * sizeRate, 126 * sizeRate)
             currentBtn.addSubview(imageView)
             
             currentBtnTimer.invalidate()
-        }
-        else {
-
-        }
+//        }
+//        else {
+//
+//        }
     }
     
     func refreshAreaBtns() {

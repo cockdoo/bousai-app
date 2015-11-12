@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var centerImageView: UIImageView!
     
+    var sizeRate: CGFloat = 1.17
     
     var shelterArray: NSMutableArray!
     
@@ -91,7 +92,7 @@ class MainViewController: UIViewController {
         for var i = 0; i < 4; i++ {
             let listBg = UIView()
             let originY = CGFloat(12 + 42 * i)
-            listBg.frame = CGRectMake(10.0, originY, 300.0, 34.0)
+            listBg.frame = CGRectMake(10.0 * sizeRate, originY * sizeRate, 300.0 * sizeRate, 34.0 * sizeRate)
             listBg.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
             
             shelterView.addSubview(listBg)
@@ -101,7 +102,8 @@ class MainViewController: UIViewController {
     func getShelterInfo(lat: CLLocationDegrees, lon: CLLocationDegrees, zoom: Double) {
         
         //タイル座標に変換
-        var xyArray:NSArray = bManager.convertLatLonToTile(lat, lon: lon, z: zoom)
+        print(lat, lon, zoom)
+        var xyArray: NSArray = bManager.convertLatLonToTile(lat, lon: lon, z: zoom)
         
         //JSONデータの取得
         var URL:NSURL!
@@ -210,24 +212,24 @@ class MainViewController: UIViewController {
         let listBtn = UIButton()
         let originY = CGFloat(12 + 42 * index)
         print(originY)
-        listBtn.frame = CGRectMake(10.0, originY, 300.0, 34.0)
+        listBtn.frame = CGRectMake(10.0 * sizeRate, originY * sizeRate, 300.0 * sizeRate, 34.0 * sizeRate)
         listBtn.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         listBtn.addTarget(self, action: Selector("toDetailView:"), forControlEvents: UIControlEvents.TouchUpInside)
         listBtn.tag = index
         
         shelterView.addSubview(listBtn)
         
-        let label = UILabel(frame: CGRectMake(10, 0, 264, 34))
+        let label = UILabel(frame: CGRectMake(10 * sizeRate, 0, 264 * sizeRate, 34 * sizeRate))
         label.textAlignment = NSTextAlignment.Left
         label.text = "\(index + 1)　\(name)"
         label.font = UIFont(name: "Hiragino Kaku Gothic ProN", size: 14)
-        label.font = UIFont.boldSystemFontOfSize(14)
+        label.font = UIFont.boldSystemFontOfSize(15)
         label.adjustsFontSizeToFitWidth = true
         
         let img = UIImage(named: "syousai.png")
         let imageView = UIImageView(image: img)
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.frame = CGRectMake(274, 8, 18, 18)
+        imageView.frame = CGRectMake(274 * sizeRate, 8 * sizeRate, 18 * sizeRate, 18 * sizeRate)
         
         
         listBtn.addSubview(label)
@@ -268,6 +270,8 @@ class MainViewController: UIViewController {
         URL = NSURL(string: "http://disaportal2.gsi.go.jp/hazardmap/bousaiapp/h27/api1.php?lon=\(selectedLon)&lat=\(selectedLat)&kind=shindo")
         
         let data: NSData! = NSData(contentsOfURL: URL)
+        print(URL)
+        
         let string: String! = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
         
         if (string != nil) {
@@ -276,7 +280,7 @@ class MainViewController: UIViewController {
     }
     
     func setBigMap() {
-        let bigMap = GMSMapView(frame: CGRectMake(140, 27+11, 160, 135))
+        let bigMap = GMSMapView(frame: CGRectMake(140 * sizeRate, (27+11) * sizeRate, 160 * sizeRate, 135 * sizeRate))
         bigMap.camera = GMSCameraPosition.cameraWithLatitude(selectedLat, longitude: selectedLon, zoom: 10)
         bigMap.settings.scrollGestures = false
         bigMap.settings.zoomGestures = false
