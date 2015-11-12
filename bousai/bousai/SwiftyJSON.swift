@@ -1348,18 +1348,17 @@ extension JSON {
             return self.numberValue.integerValue
         }
     }
-    
-    @available(*, unavailable, renamed="uInt")
-    public var unsignedInteger: Int? {
-        get {
-            return self.number?.unsignedIntegerValue
-        }
-    }
-    
-    @available(*, unavailable, renamed="uIntValue")
-    public var unsignedIntegerValue: Int {
-        get {
-            return self.numberValue.unsignedIntegerValue
-        }
-    }
+//    @available(*, unavailable, renamed="uInt")
+//    public var unsignedInteger: Int? {
+//        get {
+//            return self.number?.unsignedIntegerValue
+//        }
+//    }
+//    
+//    @available(*, unavailable, renamed="uIntValue")
+//    public var unsignedIntegerValue: Int {
+//        get {
+//            return self.numberValue.unsignedIntegerValue
+//        }
+//    }
 }
