@@ -133,7 +133,7 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     var viewNum = 1;
     
     func getStreetViewURL(lat: CLLocationDegrees, lon: CLLocationDegrees, width: Int, height: Int) -> UIImage {
-        /*
+        
         let apiKey = "AIzaSyCslSIWQG0dnhS8BaeCIQyUxttCliecBdA"
         let heading = arc4random_uniform(360)
         let urlString = "http://maps.googleapis.com/maps/api/streetview?size=\(width*2)x\(height*2)&location=\(lat),\(lon)&heading=\(heading)&pitch=-0.76&sensor=true&fov=90&key=\(apiKey)"
@@ -144,12 +144,12 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
         print(url)
         let imageData : NSData = try! NSData(contentsOfURL: url!, options: NSDataReadingOptions.DataReadingMappedIfSafe)
         
-        let img: UIImasge! = UIImage(data: imageData)
-        */
+        let img: UIImage! = UIImage(data: imageData)
+
         
-        let name: String! = "streetview0\(viewNum).jpg"
-        let img: UIImage! = UIImage(named: name)
-        viewNum++
+//        let name: String! = "streetview0\(viewNum).jpg"
+//        let img: UIImage! = UIImage(named: name)
+//        viewNum++
         
         return img
     }

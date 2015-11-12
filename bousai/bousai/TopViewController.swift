@@ -23,11 +23,11 @@ class TopViewController: UIViewController {
         
         
         initializeLocationManager()
-        /*initializeDatabaseManager()*/
+        initializeDatabaseManager()
         initializeBousaiManager()
 
         
-        /*setLivingArea()*/
+        setLivingArea()
         
         overView = UIView(frame: CGRectMake(0, 64 * sizeRate, 320 * sizeRate, (568-64) * sizeRate))
         self.view.addSubview(overView)
@@ -141,14 +141,13 @@ class TopViewController: UIViewController {
         
         currentBtnTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("setCurrentView"), userInfo: nil, repeats: true)
         
-//        areaArrays =  dbManager.getDistinctArea()
+        areaArrays =  dbManager.getDistinctArea()
         
-        let area0:Array = [35.317931,139.499904,"鎌倉市-大船"] //自宅
-        let area1:Array = [35.353113,139.538310,"鎌倉市-津西"] //勤務地
-        let area2:Array = [35.318271,139.514939,"鎌倉市-鎌倉山"] //よく行くカフェ
-        let area3:Array = [35.318734,139.552864,"鎌倉市-小町"] //スポーツクラブ
-        
-        areaArrays = [area0, area1, area2,area3]
+//        let area0:Array = [35.317931,139.499904,"鎌倉市-大船"] //自宅
+//        let area1:Array = [35.353113,139.538310,"鎌倉市-津西"] //勤務地
+//        let area2:Array = [35.318271,139.514939,"鎌倉市-鎌倉山"] //よく行くカフェ
+//        let area3:Array = [35.318734,139.552864,"鎌倉市-小町"] //スポーツクラブ
+//        areaArrays = [area0, area1, area2,area3]
 
         for var i = 0; i < areaArrays.count; i++ {
             var rect: CGRect!
@@ -248,12 +247,13 @@ class TopViewController: UIViewController {
             currentBtn.addSubview(label)
             currentBtn.addSubview(pinImageView)
             
-//            let img = lManager.getStreetViewURL(lManager.lat, lon: lManager.lon, width: 300, height: 126)
-            let img = UIImage(named: "streetview00.jpg")
+            let img = lManager.getStreetViewURL(lManager.lat, lon: lManager.lon, width: 300, height: 126)
+//            let img = UIImage(named: "streetview00.jpg")
+        
             let imageView = UIImageView(image: img)
             imageView.frame = CGRectMake(0, 0, 300 * sizeRate, 126 * sizeRate)
             currentBtn.addSubview(imageView)
-            
+        
             currentBtnTimer.invalidate()
 //        }
 //        else {
