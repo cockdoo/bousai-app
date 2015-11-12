@@ -20,7 +20,6 @@ class DatabaseManagerObject: NSObject {
         
 //        let path:String = path[0]
         let _path: String = paths[0]+"/swift2objectc.db"
-        print("ぬあああああああああああああああああああああ")
         print(_path)
         
         // make instance of FMDatabase

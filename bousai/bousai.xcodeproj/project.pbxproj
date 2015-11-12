@@ -61,7 +61,7 @@
 		C8D9ABB81B95F0A7002D90B6 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C8D9ABB71B95F0A7002D90B6 /* refresh.png */; };
 		C8F4EB8C1B8088B70010B749 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8B1B8088B70010B749 /* TopViewController.swift */; };
 		C8F4EB8E1B8089580010B749 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB8D1B8089580010B749 /* MainViewController.swift */; };
-		C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F4EB911B808B0B0010B749 /* CoreLocation.framework */; };
+		C8F4EB921B808B0B0010B749 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F4EB911B808B0B0010B749 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C8F4EB941B8093270010B749 /* LocationManagerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB931B8093270010B749 /* LocationManagerObject.swift */; };
 		C8F4EB9C1B80A9A10010B749 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB9B1B80A9A10010B749 /* ContentViewController.swift */; };
 		C8F4EBA01B80B69E0010B749 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4EB9F1B80B69E0010B749 /* LocationViewController.swift */; };
@@ -689,6 +689,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = bousai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -706,6 +707,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = bousai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
