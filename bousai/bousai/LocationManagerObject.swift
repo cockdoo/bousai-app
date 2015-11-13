@@ -92,7 +92,47 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
     
     func revGeocoding(lat: Double, lon: Double) {
         let location = CLLocation(latitude: lat, longitude: lon)
-        var geocoder = CLGeocoder()
+        
+        var locality: String = ""
+        var subLocality: String = ""
+        
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error)->Void in
+            if error != nil {
+                return
+            }
+            if placemarks!.count > 0 {
+                let placemark = placemarks![0] as CLPlacemark
+                //stop updating location to save battery life
+                
+                print("Country = \(placemark.country)")
+                print("Postal Code = \(placemark.postalCode)")
+                print("Administrative Area = \(placemark.administrativeArea)")
+                print("Sub Administrative Area = \(placemark.subAdministrativeArea)")
+                print("Locality = \(placemark.locality)")
+                print("Sub Locality = \(placemark.subLocality)")
+                print("Throughfare = \(placemark.thoroughfare)")
+                
+                locality = placemark.locality!
+                subLocality = placemark.subLocality!
+                
+                if (placemark.locality != nil && placemark.subLocality != nil) {
+                    dbManager.insertToLivingAreaTable(lat, lon: lon, locality: locality, sublocality: subLocality)
+                }
+                
+                self.count = self.count + 1
+                print(self.count)
+                
+                if (self.count == locationTableRows) {
+                    print("全データ挿入完了！")
+                    self.count = 0
+                    dbManager.getDistinctPlaceList()
+                }
+                
+            } else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+        
 //        geocoder.reverseGeocodeLocation(location, completionHandler: CLGeocodeCompletionHandler)
         
         /*geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks:[AnyObject], error:NSError!) -> Void  in
@@ -103,25 +143,10 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
 //                println("Postal Code = \(placemark.postalCode)")
 //                println("Administrative Area = \(placemark.administrativeArea)")
 //                println("Sub Administrative Area = \(placemark.subAdministrativeArea)")
-                /*print("Locality = \(placemark.locality)")*/
-                /*print("Sub Locality = \(placemark.subLocality)")*/
+//                print("Locality = \(placemark.locality)")
+//                print("Sub Locality = \(placemark.subLocality)")
 //                println("Throughfare = \(placemark.thoroughfare)")
-        
-        let locality: String = ""
-        let subLocality: String = ""
-//                if (placemark.locality != nil && placemark.subLocality != nil) {
-                    dbManager.insertToLivingAreaTable(lat, lon: lon, locality: locality, sublocality: subLocality)
-//                }
-        
-                self.count = self.count + 1
-                print(self.count)
-                
-                if (self.count == locationTableRows) {
-                    print("全データ挿入完了！")
-                    self.count = 0
-                    dbManager.getDistinctPlaceList()
-                }
-                
+
             /*} else if (error == nil && placemarks.count == 0) {
                 print("No results were returned.")
             } else if (error != nil) {
