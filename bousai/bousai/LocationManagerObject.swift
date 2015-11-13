@@ -107,8 +107,8 @@ class LocationManagerObject: NSObject, CLLocationManagerDelegate {
                 /*print("Sub Locality = \(placemark.subLocality)")*/
 //                println("Throughfare = \(placemark.thoroughfare)")
         
-        let locality: String = "テスト"
-        let subLocality: String = "てすと"
+        let locality: String = ""
+        let subLocality: String = ""
 //                if (placemark.locality != nil && placemark.subLocality != nil) {
                     dbManager.insertToLivingAreaTable(lat, lon: lon, locality: locality, sublocality: subLocality)
 //                }

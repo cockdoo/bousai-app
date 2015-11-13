@@ -34,6 +34,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if self.view.frame.width == 320 {
+            sizeRate = 1
+        }
+        
         initializeMap()
         
         print(selectedName)

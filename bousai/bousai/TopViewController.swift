@@ -21,6 +21,9 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        if self.view.frame.width == 320 {
+            sizeRate = 1
+        }
         
         initializeLocationManager()
         initializeDatabaseManager()
@@ -195,7 +198,6 @@ class TopViewController: UIViewController {
                 overView.addSubview(bgView)
                 overView.addSubview(areaBtn)
                 areaBtn.addSubview(label)
-                
                 
                 let img = lManager.getStreetViewURL(lat, lon: lon, width: 169, height: 148)
                 
